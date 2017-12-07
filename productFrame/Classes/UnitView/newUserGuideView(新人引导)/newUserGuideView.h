@@ -1,15 +1,14 @@
 //
-//  newViewController.h
+//  newUserGuideView.h
 //  productFrame
 //
-//  Created by 陈威利 on 2017/11/6.
+//  Created by 陈威利 on 2017/12/7.
 //  Copyright © 2017年 陈威利. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import <UIKit/UIKit.h>
 typedef void(^choicePageBlock)(void);
+@interface newUserGuideView : UIView
 
-
-@interface newViewController : RootViewController
 @property (nonatomic, copy) choicePageBlock block;
 @end

@@ -1,38 +1,29 @@
 //
-//  newViewController.m
+//  newViewController2.m
 //  productFrame
 //
-//  Created by 陈威利 on 2017/11/6.
+//  Created by 陈威利 on 2017/12/7.
 //  Copyright © 2017年 陈威利. All rights reserved.
 //
 
-#import "newViewController.h"
+#import "newViewController2.h"
 
-@interface newViewController ()
+@interface newViewController2 ()
 
 @end
 
-@implementation newViewController
+@implementation newViewController2
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
-    newUserGuideView *view =[[newUserGuideView alloc]initWithFrame:self.view.bounds];
-    [self.view addSubview:view];
-    foreoWeakSelf;
-    view.block = ^{
-        if (weakSelf.block) {
-            weakSelf.block();
-        }
-    };
+    self.view.backgroundColor = [UIColor brownColor];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 /*
 #pragma mark - Navigation

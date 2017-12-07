@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "newViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,15 +16,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    foreoWeakSelf;
+    
+
     // 1.创建窗口
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    
     // 2.设置窗口的根控制器
-    productMainTabBarController *tabBarVC = [[productMainTabBarController alloc]init];
-    self.window.rootViewController = tabBarVC;
-    
+    newViewController *vc = [newViewController new];
+    self.window.rootViewController = vc;
+    vc.block = ^{
+        productMainTabBarController *tabBarVC = [[productMainTabBarController alloc]init];
+        weakSelf.window.rootViewController = tabBarVC;
+    };
+   
     // 3.显示窗口
     [self.window makeKeyAndVisible];
+    
     
     return YES;
 }

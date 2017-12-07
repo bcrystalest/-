@@ -11,8 +11,12 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
+#define foreoWeakSelf __weak typeof(self) weakSelf = self;
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_WIDTH_RATIO (SCREEN_WIDTH/414)
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #endif /* one_pch */
 #import "RootViewController.h"
 #import "productMainTabBarController.h"
 #import "newViewController.h"
+#import "newUserGuideView.h"

@@ -7,7 +7,7 @@
 //
 
 #import "productMainTabBarController.h"
-
+#import "newViewController2.h"
 @interface productMainTabBarController ()
 
 @end
@@ -25,19 +25,19 @@
  */
 - (void)setUpAllChildViewController{
     // 1.添加第一个控制器
-    newViewController *oneVC = [[newViewController alloc]init];
+    newViewController2 *oneVC = [[newViewController2 alloc]init];
     [self setUpOneChildViewController:oneVC image:[UIImage imageNamed:@"tab_home_icon"] title:@"首页"];
     
     // 2.添加第2个控制器
-    newViewController *twoVC = [[newViewController alloc]init];
+    newViewController2 *twoVC = [[newViewController2 alloc]init];
     [self setUpOneChildViewController:twoVC image:[UIImage imageNamed:@"js"] title:@"技术"];
     
     // 3.添加第3个控制器
-    newViewController *threeVC = [[newViewController alloc]init];
+    newViewController2 *threeVC = [[newViewController2 alloc]init];
     [self setUpOneChildViewController:threeVC image:[UIImage imageNamed:@"qw"] title:@"博文"];
     
     // 4.添加第4个控制器
-    newViewController *fourVC = [[newViewController alloc]init];
+    newViewController2 *fourVC = [[newViewController2 alloc]init];
     [self setUpOneChildViewController:fourVC image:[UIImage imageNamed:@"user"] title:@"我的江湖"];
 }
 
