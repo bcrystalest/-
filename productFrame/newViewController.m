@@ -33,6 +33,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)leftClick:(UIButton *)btn{
+    
+}
 
 /*
 #pragma mark - Navigation
