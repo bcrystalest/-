@@ -31,7 +31,7 @@
    
     // 3.显示窗口
     [self.window makeKeyAndVisible];
-    
+    NSLog(@"");
     
     return YES;
 }
