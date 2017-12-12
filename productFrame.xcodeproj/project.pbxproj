@@ -18,6 +18,7 @@
 		4F9E39041FD8DC8300648B0C /* newUserGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E39031FD8DC8300648B0C /* newUserGuideView.m */; };
 		4F9E39071FD8E3EB00648B0C /* newViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E39061FD8E3EB00648B0C /* newViewController2.m */; };
 		52CF90D9136BE1863A82BD46 /* libPods-productFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11247647D970C8D6A44D3263 /* libPods-productFrame.a */; };
+		84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4DDD41FDE59500026CED5 /* GuideViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		4F9E39031FD8DC8300648B0C /* newUserGuideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newUserGuideView.m; sourceTree = "<group>"; };
 		4F9E39051FD8E3EB00648B0C /* newViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newViewController2.h; sourceTree = "<group>"; };
 		4F9E39061FD8E3EB00648B0C /* newViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newViewController2.m; sourceTree = "<group>"; };
+		84C4DDD31FDE59500026CED5 /* GuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
+		84C4DDD41FDE59500026CED5 /* GuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		96086AECA14E4B963C1E7CD9 /* Pods-productFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-productFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-productFrame/Pods-productFrame.release.xcconfig"; sourceTree = "<group>"; };
 		B504A438B8C2DDCE7B08554E /* Pods-productFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-productFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-productFrame/Pods-productFrame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +120,7 @@
 		4F54EF3D1FB0460000291B70 /* productFrame */ = {
 			isa = PBXGroup;
 			children = (
+				84C4DDCF1FDE58BB0026CED5 /* Guide */,
 				4F9E38FE1FD8DABA00648B0C /* Classes */,
 				4F9E38FD1FD8DAB800648B0C /* Other(底层) */,
 				4F9E38FC1FD8DAB200648B0C /* New Group */,
@@ -234,6 +238,39 @@
 				11247647D970C8D6A44D3263 /* libPods-productFrame.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84C4DDCF1FDE58BB0026CED5 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				84C4DDD21FDE58DC0026CED5 /* Controller */,
+				84C4DDD11FDE58D60026CED5 /* Model */,
+				84C4DDD01FDE58CE0026CED5 /* View */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
+		84C4DDD01FDE58CE0026CED5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84C4DDD11FDE58D60026CED5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84C4DDD21FDE58DC0026CED5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84C4DDD31FDE59500026CED5 /* GuideViewController.h */,
+				84C4DDD41FDE59500026CED5 /* GuideViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +460,7 @@
 				4F9E39041FD8DC8300648B0C /* newUserGuideView.m in Sources */,
 				4F54EF4E1FB0460000291B70 /* main.m in Sources */,
 				4F54EF7C1FB04C5100291B70 /* newViewController.m in Sources */,
+				84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */,
 				4F54EF731FB0474500291B70 /* productMainTabBarController.m in Sources */,
 				4F54EF401FB0460000291B70 /* AppDelegate.m in Sources */,
 			);

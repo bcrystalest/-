@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "newViewController.h"
+#import "GuideViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,20 +20,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     foreoWeakSelf;
     
-
     // 1.创建窗口
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    // 2.设置窗口的根控制器
-    newViewController *vc = [newViewController new];
-    self.window.rootViewController = vc;
-    vc.block = ^{
-        productMainTabBarController *tabBarVC = [[productMainTabBarController alloc]init];
-        weakSelf.window.rootViewController = tabBarVC;
-    };
-   
+    NSUserDefaults *useDef = [NSUserDefaults standardUserDefaults];
+    //判断是否第一次进入
+    if (![useDef objectForKey:@"First2"]) {
+        //第一次进入显示新手引导
+        GuideViewController *guide = [[GuideViewController alloc]init];
+        // 2.设置窗口的根控制器
+        self.window.rootViewController = guide;
+        
+    }else{
+        //显示主页面
+        newViewController *vc = [newViewController new];
+        // 2.设置窗口的根控制器
+        self.window.rootViewController = vc;
+        vc.block = ^{
+            productMainTabBarController *tabBarVC = [[productMainTabBarController alloc]init];
+            weakSelf.window.rootViewController = tabBarVC;
+        };
+    }
+    
     // 3.显示窗口
     [self.window makeKeyAndVisible];
-    NSLog(@"");
+
     
     return YES;
 }
