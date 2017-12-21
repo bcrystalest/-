@@ -13,58 +13,57 @@
 
 @implementation RootViewController
 
+- (navigationView *)navBar{
+    if (_navBar == nil) {
+        _navBar = [[navigationView alloc]init];
+    }
+    return _navBar;
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    if (self.navigationController.viewControllers.count > 1) {
+        self.tabBarController.tabBar.hidden = YES;
+    }else{
+        self.tabBarController.tabBar.hidden = NO;
+    }
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavigationBar];
-    
     // Do any additional setup after loading the view.
+    [self addNavigationBar];
     self.view.backgroundColor=[UIColor whiteColor];
 }
 
-- (void)setNavigationBar{
+- (void)addNavigationBar{
+    foreoWeakSelf;
     self.navigationController.navigationBar.hidden = YES;
+    [self.view addSubview:self.navBar];
+    
+    _navBar.gobackBlock = ^{
+        [weakSelf goBack];
+    };
+}
+///设置每个navigaiotnBar的属性
+- (void)setNavigationBarTitle:(NSString *)title withPopButton:(BOOL)show{
+    [self.navBar addNavigationBarTitle:title];
+    if (show == YES) {
+        [self.navBar addBackButton];
+    }
 }
 
--(void)addTitleView:(NSString *)name{
-    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 150*1, 44)];
-//    label.textColor=KTITLEVIEWCOL;
-    label.text = name;
-    label.textAlignment=NSTextAlignmentCenter;
-    label.font=[UIFont boldSystemFontOfSize:22];
-    self.navigationItem.titleView=label;
-}
-
--(void)addBarItem:(NSString *)title withBackGroundImage:(NSString *)backGroundImage withDirection:(NSString *)direction{
-    UIButton *btn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44*1, 30)];
-    if (title!=nil) {
-        [btn setTitle:title forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        btn.titleLabel.font=[UIFont systemFontOfSize:14];
-    }
-    if (backGroundImage!=nil) {
-        [btn setBackgroundImage:[UIImage imageNamed:backGroundImage] forState:UIControlStateNormal];
-    }
-    UIBarButtonItem *barBtn=[[UIBarButtonItem alloc]initWithCustomView:btn];
-    if ([direction isEqualToString:@"left"]) {
-        [btn addTarget:self action:@selector(leftClick:) forControlEvents:UIControlEventTouchUpInside];
-        self.navigationItem.leftBarButtonItem=barBtn;
-    }else if([direction isEqualToString:@"right"]){
-        [btn addTarget:self action:@selector(rightClick:) forControlEvents:UIControlEventTouchUpInside];
-        self.navigationItem.rightBarButtonItem=barBtn;
-    }
-}
 
 -(void)leftClick:(UIButton *)btn{
     NSLog(@"子类需要重写leftClick:方法");
 }
 -(void)rightClick:(UIButton *)btn{
     NSLog(@"子类需要重写rightClick:方法");
+}
+
+- (void)goBack{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)pageChangeAction{
@@ -77,6 +76,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation

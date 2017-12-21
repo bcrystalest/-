@@ -18,10 +18,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor brownColor];
+    
+    [self setNavigationBarTitle:@"what!" withPopButton:NO];
+    UIButton *btn = [UIButton new];
+    [self.view addSubview:btn];
+    btn.frame = CGRectMake(100, 100, 50, 50);
+    [btn setBackgroundColor:[UIColor redColor]];
+    [btn addTarget:self action:@selector(gogogo) forControlEvents:UIControlEventTouchDown];
     [self pageChangeAction];
 }
 
+//- (void)setNavigationBar{
+//    
+//    [self.navBar addNavigationBarTitle:@"whatever"];
+//}
 
+- (void)gogogo{
+    newViewController *vc = [newViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning {

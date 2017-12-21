@@ -15,6 +15,7 @@ typedef void(^choicePageBlock)(void);
 
 @property (nonatomic, copy) choicePageBlock pageChangeActionBlock;
 
+@property (nonatomic, strong)navigationView *navBar;
 //添加titleView
 -(void)addTitleView:(NSString *)name;
 //添加左右按钮
@@ -22,6 +23,10 @@ typedef void(^choicePageBlock)(void);
 -(void)leftClick:(UIButton *)btn;
 -(void)rightClick:(UIButton *)btn;
 - (void)pageChangeAction;
+///设置navigaiotnBar的属性
+- (void)addNavigationBar;
+- (void)setNavigationBarTitle:(NSString *)title withPopButton:(BOOL)isHidden;
+
 //-(void)addBarItem:(NSString *)title withImage:(NSString *)imageName withBackGroundImage:(NSString *)backGroundImage withDirection:(NSString *)direction;
 
 

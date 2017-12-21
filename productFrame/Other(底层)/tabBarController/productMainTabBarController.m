@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//    self.view.backgroundColor = [UIColor whiteColor];
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     [self setUpAllChildViewController];
 }
 

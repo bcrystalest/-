@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "__32-[navigationView layoutSubviews]_block_invoke:navigationView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "weakSelf.frame.size.height-edgeY">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[rootIncludeController inSequence]:rootIncludeController.m">
          <PersistentStrings>
             <PersistentString

@@ -18,15 +18,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    newUserGuideView *view =[[newUserGuideView alloc]initWithFrame:self.view.bounds];
-    [self.view addSubview:view];
-    foreoWeakSelf;
-    view.block = ^{
-        if (weakSelf.block) {
-            weakSelf.block();
-        }
-    };
+    [self addNavigationBar];
+    [self setNavigationBarTitle:@"holy shit" withPopButton:YES];
+//    newUserGuideView *view =[[newUserGuideView alloc]initWithFrame:self.view.bounds];
+//    [self.view addSubview:view];
+//    foreoWeakSelf;
+//    view.block = ^{
+//        if (weakSelf.block) {
+//            weakSelf.block();
+//        }
+//    };
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
