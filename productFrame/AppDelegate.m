@@ -26,9 +26,16 @@
     //判断是否第一次进入
     if (![useDef objectForKey:@"First2"]) {
         //第一次进入显示新手引导
-        GuideViewController *guide = [[GuideViewController alloc]init];
+//        GuideViewController *guide = [[GuideViewController alloc]init];
         // 2.设置窗口的根控制器
-        self.window.rootViewController = guide;
+        rootIncludeController *vc = [rootIncludeController new];
+        subModelForIncludeController *guideModel = [subModelForIncludeController new];
+        guideModel.selfViewController = [GuideViewController new];
+        subModelForIncludeController *mainPageModel = [subModelForIncludeController new];
+        mainPageModel.selfViewController = [productMainTabBarController new];
+        vc.vcArray = [NSMutableArray arrayWithObjects:guideModel,mainPageModel, nil];
+        [vc inSequence];
+        self.window.rootViewController = vc;
         
     }else{
         //显示主页面

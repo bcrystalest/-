@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0C28C41FEA3A3400FC78A3 /* rootIncludeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C28C31FEA3A3400FC78A3 /* rootIncludeController.m */; };
+		4F0C28C81FEA3DD500FC78A3 /* subModelForIncludeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C28C71FEA3DD500FC78A3 /* subModelForIncludeController.m */; };
+		4F0C28CB1FEB4F0A00FC78A3 /* navigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C28CA1FEB4F0A00FC78A3 /* navigationView.m */; };
 		4F54EF401FB0460000291B70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF3F1FB0460000291B70 /* AppDelegate.m */; };
 		4F54EF481FB0460000291B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F54EF471FB0460000291B70 /* Assets.xcassets */; };
 		4F54EF4E1FB0460000291B70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF4D1FB0460000291B70 /* main.m */; };
@@ -40,6 +43,12 @@
 
 /* Begin PBXFileReference section */
 		11247647D970C8D6A44D3263 /* libPods-productFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-productFrame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F0C28C21FEA3A3400FC78A3 /* rootIncludeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rootIncludeController.h; sourceTree = "<group>"; };
+		4F0C28C31FEA3A3400FC78A3 /* rootIncludeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rootIncludeController.m; sourceTree = "<group>"; };
+		4F0C28C61FEA3DD500FC78A3 /* subModelForIncludeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subModelForIncludeController.h; sourceTree = "<group>"; };
+		4F0C28C71FEA3DD500FC78A3 /* subModelForIncludeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = subModelForIncludeController.m; sourceTree = "<group>"; };
+		4F0C28C91FEB4F0A00FC78A3 /* navigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = navigationView.h; sourceTree = "<group>"; };
+		4F0C28CA1FEB4F0A00FC78A3 /* navigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navigationView.m; sourceTree = "<group>"; };
 		4F54EF3B1FB0460000291B70 /* productFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = productFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F54EF3E1FB0460000291B70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F54EF3F1FB0460000291B70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +104,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F0C28C11FEA39C900FC78A3 /* MotherViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4F0C28C51FEA3DAC00FC78A3 /* model */,
+				4F0C28C21FEA3A3400FC78A3 /* rootIncludeController.h */,
+				4F0C28C31FEA3A3400FC78A3 /* rootIncludeController.m */,
+			);
+			path = MotherViewController;
+			sourceTree = "<group>";
+		};
+		4F0C28C51FEA3DAC00FC78A3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4F0C28C61FEA3DD500FC78A3 /* subModelForIncludeController.h */,
+				4F0C28C71FEA3DD500FC78A3 /* subModelForIncludeController.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		4F54EF321FB0460000291B70 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +195,8 @@
 		4F54EF751FB048DC00291B70 /* navigationController */ = {
 			isa = PBXGroup;
 			children = (
+				4F0C28C91FEB4F0A00FC78A3 /* navigationView.h */,
+				4F0C28CA1FEB4F0A00FC78A3 /* navigationView.m */,
 			);
 			path = navigationController;
 			sourceTree = "<group>";
@@ -201,6 +231,7 @@
 		4F9E38FE1FD8DABA00648B0C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4F0C28C11FEA39C900FC78A3 /* MotherViewController */,
 				4F9E39001FD8DC3500648B0C /* UnitView */,
 			);
 			path = Classes;
@@ -458,9 +489,12 @@
 				4F54EF791FB04B0D00291B70 /* RootViewController.m in Sources */,
 				4F9E39071FD8E3EB00648B0C /* newViewController2.m in Sources */,
 				4F9E39041FD8DC8300648B0C /* newUserGuideView.m in Sources */,
+				4F0C28C81FEA3DD500FC78A3 /* subModelForIncludeController.m in Sources */,
+				4F0C28C41FEA3A3400FC78A3 /* rootIncludeController.m in Sources */,
 				4F54EF4E1FB0460000291B70 /* main.m in Sources */,
 				4F54EF7C1FB04C5100291B70 /* newViewController.m in Sources */,
 				84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */,
+				4F0C28CB1FEB4F0A00FC78A3 /* navigationView.m in Sources */,
 				4F54EF731FB0474500291B70 /* productMainTabBarController.m in Sources */,
 				4F54EF401FB0460000291B70 /* AppDelegate.m in Sources */,
 			);

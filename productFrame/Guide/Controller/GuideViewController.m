@@ -33,7 +33,6 @@
 - (void)creatScrollView{
     
     CGFloat imageNum = 4;
-    
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     self.scrollView.bounces = NO;
     self.scrollView.pagingEnabled = YES;
@@ -63,14 +62,12 @@
         }else{
             UIButton *skipButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [self.scrollView addSubview:skipButton];
-            skipButton.frame = CGRectMake(10 + SCREEN_WIDTH *i, 80, 100, 20);
+            skipButton.frame = CGRectMake(10 + SCREEN_WIDTH *i, 80, 100, 40);
             [skipButton setTitle:@"skip >>" forState:UIControlStateNormal];
             [skipButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
             [skipButton addTarget:self action:@selector(skip:) forControlEvents:UIControlEventTouchUpInside];
         }
-        
     }
-    
     pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 3, SCREEN_HEIGHT * 15 / 16, SCREEN_WIDTH / 3, SCREEN_HEIGHT / 16)];
     // 设置页数
     pageControl.numberOfPages = imageNum;
@@ -97,7 +94,8 @@
     [useDef setBool:isFirst forKey:@"First"];
     [useDef synchronize];
     // 切换根视图控制器
-    self.view.window.rootViewController = [[productMainTabBarController alloc] init];
+//    self.view.window.rootViewController = [[productMainTabBarController alloc] init];
+    [self pageChangeAction];
 }
 
 - (void)skip:(UIButton *)sender{

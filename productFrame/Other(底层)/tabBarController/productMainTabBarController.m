@@ -46,7 +46,6 @@
  *  添加一个子控制器的方法
  */
 - (void)setUpOneChildViewController:(UIViewController *)viewController image:(UIImage *)image title:(NSString *)title{
-    
     UINavigationController *navC = [[UINavigationController alloc]initWithRootViewController:viewController];
     navC.title = title;
     navC.tabBarItem.image = image;

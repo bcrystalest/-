@@ -13,16 +13,28 @@
 
 @implementation RootViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setNavigationBar];
+    
     // Do any additional setup after loading the view.
     self.view.backgroundColor=[UIColor whiteColor];
+}
+
+- (void)setNavigationBar{
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 -(void)addTitleView:(NSString *)name{
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 150*1, 44)];
 //    label.textColor=KTITLEVIEWCOL;
-    label.text=name;
+    label.text = name;
     label.textAlignment=NSTextAlignmentCenter;
     label.font=[UIFont boldSystemFontOfSize:22];
     self.navigationItem.titleView=label;
@@ -53,6 +65,12 @@
 }
 -(void)rightClick:(UIButton *)btn{
     NSLog(@"子类需要重写rightClick:方法");
+}
+
+- (void)pageChangeAction{
+    if (_pageChangeActionBlock) {
+        _pageChangeActionBlock();
+    }
 }
 
 - (void)didReceiveMemoryWarning {

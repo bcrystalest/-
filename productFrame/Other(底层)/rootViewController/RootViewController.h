@@ -10,8 +10,10 @@
 //#import "Define.h"
 //#import "HttpManager.h"
 //#import "UIImageView+WebCache.h"
+typedef void(^choicePageBlock)(void);
 @interface RootViewController : UIViewController
 
+@property (nonatomic, copy) choicePageBlock pageChangeActionBlock;
 
 //添加titleView
 -(void)addTitleView:(NSString *)name;
@@ -19,7 +21,7 @@
 -(void)addBarItem:(NSString *)title withBackGroundImage:(NSString *)backGroundImage withDirection:(NSString *)direction;
 -(void)leftClick:(UIButton *)btn;
 -(void)rightClick:(UIButton *)btn;
-
+- (void)pageChangeAction;
 //-(void)addBarItem:(NSString *)title withImage:(NSString *)imageName withBackGroundImage:(NSString *)backGroundImage withDirection:(NSString *)direction;
 
 
