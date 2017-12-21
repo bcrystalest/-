@@ -18,6 +18,7 @@
 		4F54EF731FB0474500291B70 /* productMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF721FB0474500291B70 /* productMainTabBarController.m */; };
 		4F54EF791FB04B0D00291B70 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF771FB0496500291B70 /* RootViewController.m */; };
 		4F54EF7C1FB04C5100291B70 /* newViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF7B1FB04C5100291B70 /* newViewController.m */; };
+		4F8D52B91FEB91B70035F2FC /* navigationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D52B81FEB91B70035F2FC /* navigationButton.m */; };
 		4F9E39041FD8DC8300648B0C /* newUserGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E39031FD8DC8300648B0C /* newUserGuideView.m */; };
 		4F9E39071FD8E3EB00648B0C /* newViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E39061FD8E3EB00648B0C /* newViewController2.m */; };
 		52CF90D9136BE1863A82BD46 /* libPods-productFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11247647D970C8D6A44D3263 /* libPods-productFrame.a */; };
@@ -68,6 +69,8 @@
 		4F54EF781FB0496500291B70 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		4F54EF7A1FB04C5100291B70 /* newViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newViewController.h; sourceTree = "<group>"; };
 		4F54EF7B1FB04C5100291B70 /* newViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newViewController.m; sourceTree = "<group>"; };
+		4F8D52B71FEB91B70035F2FC /* navigationButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = navigationButton.h; sourceTree = "<group>"; };
+		4F8D52B81FEB91B70035F2FC /* navigationButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navigationButton.m; sourceTree = "<group>"; };
 		4F9E39021FD8DC8300648B0C /* newUserGuideView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newUserGuideView.h; sourceTree = "<group>"; };
 		4F9E39031FD8DC8300648B0C /* newUserGuideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newUserGuideView.m; sourceTree = "<group>"; };
 		4F9E39051FD8E3EB00648B0C /* newViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newViewController2.h; sourceTree = "<group>"; };
@@ -195,6 +198,7 @@
 		4F54EF751FB048DC00291B70 /* navigationController */ = {
 			isa = PBXGroup;
 			children = (
+				4F8D52B61FEB919F0035F2FC /* view */,
 				4F0C28C91FEB4F0A00FC78A3 /* navigationView.h */,
 				4F0C28CA1FEB4F0A00FC78A3 /* navigationView.m */,
 			);
@@ -208,6 +212,15 @@
 				4F54EF771FB0496500291B70 /* RootViewController.m */,
 			);
 			path = rootViewController;
+			sourceTree = "<group>";
+		};
+		4F8D52B61FEB919F0035F2FC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4F8D52B71FEB91B70035F2FC /* navigationButton.h */,
+				4F8D52B81FEB91B70035F2FC /* navigationButton.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		4F9E38FC1FD8DAB200648B0C /* New Group */ = {
@@ -491,6 +504,7 @@
 				4F9E39041FD8DC8300648B0C /* newUserGuideView.m in Sources */,
 				4F0C28C81FEA3DD500FC78A3 /* subModelForIncludeController.m in Sources */,
 				4F0C28C41FEA3A3400FC78A3 /* rootIncludeController.m in Sources */,
+				4F8D52B91FEB91B70035F2FC /* navigationButton.m in Sources */,
 				4F54EF4E1FB0460000291B70 /* main.m in Sources */,
 				4F54EF7C1FB04C5100291B70 /* newViewController.m in Sources */,
 				84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */,

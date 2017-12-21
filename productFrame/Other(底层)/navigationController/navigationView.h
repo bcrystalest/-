@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^backBlock)(void);
+typedef void(^buttonClickBlock)(void);
 
 @interface navigationView : UIView
-@property (nonatomic, copy) backBlock gobackBlock;
+@property (nonatomic, copy) buttonClickBlock gobackBlock;
+@property (nonatomic, copy) buttonClickBlock rightClickBlock;
 - (void)addNavigationBarTitle:(NSString *)titleString;
 - (void)addBackButton;
-
+- (void)addRightButton;
 
 @end

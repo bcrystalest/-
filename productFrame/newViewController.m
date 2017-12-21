@@ -20,6 +20,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self addNavigationBar];
     [self setNavigationBarTitle:@"holy shit" withPopButton:YES];
+    [self setRightButton];
 //    newUserGuideView *view =[[newUserGuideView alloc]initWithFrame:self.view.bounds];
 //    [self.view addSubview:view];
 //    foreoWeakSelf;
@@ -36,8 +37,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)leftClick:(UIButton *)btn{
-    
+- (void)rightClickAction{
+//    NSLog(@"1231231");
 }
 
 /*

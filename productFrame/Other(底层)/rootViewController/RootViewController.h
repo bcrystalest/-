@@ -21,12 +21,12 @@ typedef void(^choicePageBlock)(void);
 //添加左右按钮
 -(void)addBarItem:(NSString *)title withBackGroundImage:(NSString *)backGroundImage withDirection:(NSString *)direction;
 -(void)leftClick:(UIButton *)btn;
--(void)rightClick:(UIButton *)btn;
+-(void)rightClickAction;
 - (void)pageChangeAction;
 ///设置navigaiotnBar的属性
 - (void)addNavigationBar;
 - (void)setNavigationBarTitle:(NSString *)title withPopButton:(BOOL)isHidden;
-
+- (void)setRightButton;
 //-(void)addBarItem:(NSString *)title withImage:(NSString *)imageName withBackGroundImage:(NSString *)backGroundImage withDirection:(NSString *)direction;
 
 

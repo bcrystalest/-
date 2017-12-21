@@ -46,7 +46,7 @@
         [weakSelf goBack];
     };
 }
-///设置每个navigaiotnBar的属性
+///设置title和返回按钮
 - (void)setNavigationBarTitle:(NSString *)title withPopButton:(BOOL)show{
     [self.navBar addNavigationBarTitle:title];
     if (show == YES) {
@@ -54,17 +54,28 @@
     }
 }
 
+- (void)setRightButton{
+    foreoWeakSelf;
+    [self.navBar addRightButton];
+    _navBar.rightClickBlock = ^{
+        [weakSelf rightClickAction];
+    };
+}
+
 
 -(void)leftClick:(UIButton *)btn{
     NSLog(@"子类需要重写leftClick:方法");
 }
--(void)rightClick:(UIButton *)btn{
+-(void)rightClickAction{
+    
     NSLog(@"子类需要重写rightClick:方法");
 }
 
 - (void)goBack{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
 
 - (void)pageChangeAction{
     if (_pageChangeActionBlock) {
