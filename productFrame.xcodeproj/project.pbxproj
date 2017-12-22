@@ -15,11 +15,12 @@
 		4F54EF4E1FB0460000291B70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF4D1FB0460000291B70 /* main.m */; };
 		4F54EF581FB0460000291B70 /* productFrameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF571FB0460000291B70 /* productFrameTests.m */; };
 		4F54EF631FB0460100291B70 /* productFrameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF621FB0460100291B70 /* productFrameUITests.m */; };
-		4F54EF731FB0474500291B70 /* productMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF721FB0474500291B70 /* productMainTabBarController.m */; };
 		4F54EF791FB04B0D00291B70 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF771FB0496500291B70 /* RootViewController.m */; };
 		4F54EF7C1FB04C5100291B70 /* newViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF7B1FB04C5100291B70 /* newViewController.m */; };
+		4F889CA11FECABA7000B4B2C /* 集成功能.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F889CA01FECABA7000B4B2C /* 集成功能.txt */; };
+		4F889CA61FECB0E8000B4B2C /* customTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F889CA31FECB0E7000B4B2C /* customTabBar.m */; };
+		4F889CA71FECB0E8000B4B2C /* customTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F889CA51FECB0E8000B4B2C /* customTabBarController.m */; };
 		4F8D52B91FEB91B70035F2FC /* navigationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D52B81FEB91B70035F2FC /* navigationButton.m */; };
-		4F9E39041FD8DC8300648B0C /* newUserGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E39031FD8DC8300648B0C /* newUserGuideView.m */; };
 		4F9E39071FD8E3EB00648B0C /* newViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E39061FD8E3EB00648B0C /* newViewController2.m */; };
 		52CF90D9136BE1863A82BD46 /* libPods-productFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11247647D970C8D6A44D3263 /* libPods-productFrame.a */; };
 		84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4DDD41FDE59500026CED5 /* GuideViewController.m */; };
@@ -62,17 +63,18 @@
 		4F54EF5E1FB0460100291B70 /* productFrameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = productFrameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F54EF621FB0460100291B70 /* productFrameUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = productFrameUITests.m; sourceTree = "<group>"; };
 		4F54EF641FB0460100291B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F54EF711FB0474500291B70 /* productMainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = productMainTabBarController.h; sourceTree = "<group>"; };
-		4F54EF721FB0474500291B70 /* productMainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = productMainTabBarController.m; sourceTree = "<group>"; };
 		4F54EF741FB047FA00291B70 /* one.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = one.pch; sourceTree = "<group>"; };
 		4F54EF771FB0496500291B70 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		4F54EF781FB0496500291B70 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		4F54EF7A1FB04C5100291B70 /* newViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newViewController.h; sourceTree = "<group>"; };
 		4F54EF7B1FB04C5100291B70 /* newViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newViewController.m; sourceTree = "<group>"; };
+		4F889CA01FECABA7000B4B2C /* 集成功能.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "集成功能.txt"; sourceTree = "<group>"; };
+		4F889CA21FECB0E7000B4B2C /* customTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customTabBarController.h; sourceTree = "<group>"; };
+		4F889CA31FECB0E7000B4B2C /* customTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customTabBar.m; sourceTree = "<group>"; };
+		4F889CA41FECB0E8000B4B2C /* customTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customTabBar.h; sourceTree = "<group>"; };
+		4F889CA51FECB0E8000B4B2C /* customTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customTabBarController.m; sourceTree = "<group>"; };
 		4F8D52B71FEB91B70035F2FC /* navigationButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = navigationButton.h; sourceTree = "<group>"; };
 		4F8D52B81FEB91B70035F2FC /* navigationButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navigationButton.m; sourceTree = "<group>"; };
-		4F9E39021FD8DC8300648B0C /* newUserGuideView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newUserGuideView.h; sourceTree = "<group>"; };
-		4F9E39031FD8DC8300648B0C /* newUserGuideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newUserGuideView.m; sourceTree = "<group>"; };
 		4F9E39051FD8E3EB00648B0C /* newViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newViewController2.h; sourceTree = "<group>"; };
 		4F9E39061FD8E3EB00648B0C /* newViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newViewController2.m; sourceTree = "<group>"; };
 		84C4DDD31FDE59500026CED5 /* GuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		4F54EF321FB0460000291B70 = {
 			isa = PBXGroup;
 			children = (
+				4F889CA01FECABA7000B4B2C /* 集成功能.txt */,
 				4F54EF3D1FB0460000291B70 /* productFrame */,
 				4F54EF561FB0460000291B70 /* productFrameTests */,
 				4F54EF611FB0460100291B70 /* productFrameUITests */,
@@ -151,7 +154,6 @@
 		4F54EF3D1FB0460000291B70 /* productFrame */ = {
 			isa = PBXGroup;
 			children = (
-				84C4DDCF1FDE58BB0026CED5 /* Guide */,
 				4F9E38FE1FD8DABA00648B0C /* Classes */,
 				4F9E38FD1FD8DAB800648B0C /* Other(底层) */,
 				4F9E38FC1FD8DAB200648B0C /* New Group */,
@@ -189,8 +191,10 @@
 		4F54EF701FB0470D00291B70 /* tabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				4F54EF711FB0474500291B70 /* productMainTabBarController.h */,
-				4F54EF721FB0474500291B70 /* productMainTabBarController.m */,
+				4F889CA41FECB0E8000B4B2C /* customTabBar.h */,
+				4F889CA31FECB0E7000B4B2C /* customTabBar.m */,
+				4F889CA21FECB0E7000B4B2C /* customTabBarController.h */,
+				4F889CA51FECB0E8000B4B2C /* customTabBarController.m */,
 			);
 			path = tabBarController;
 			sourceTree = "<group>";
@@ -253,18 +257,9 @@
 		4F9E39001FD8DC3500648B0C /* UnitView */ = {
 			isa = PBXGroup;
 			children = (
-				4F9E39011FD8DC4200648B0C /* newUserGuideView(新人引导) */,
+				84C4DDCF1FDE58BB0026CED5 /* Guide */,
 			);
 			path = UnitView;
-			sourceTree = "<group>";
-		};
-		4F9E39011FD8DC4200648B0C /* newUserGuideView(新人引导) */ = {
-			isa = PBXGroup;
-			children = (
-				4F9E39021FD8DC8300648B0C /* newUserGuideView.h */,
-				4F9E39031FD8DC8300648B0C /* newUserGuideView.m */,
-			);
-			path = "newUserGuideView(新人引导)";
 			sourceTree = "<group>";
 		};
 		5F8C6950E363E156AB669B62 /* Pods */ = {
@@ -426,6 +421,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F889CA11FECABA7000B4B2C /* 集成功能.txt in Resources */,
 				4F54EF481FB0460000291B70 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,7 +497,7 @@
 			files = (
 				4F54EF791FB04B0D00291B70 /* RootViewController.m in Sources */,
 				4F9E39071FD8E3EB00648B0C /* newViewController2.m in Sources */,
-				4F9E39041FD8DC8300648B0C /* newUserGuideView.m in Sources */,
+				4F889CA61FECB0E8000B4B2C /* customTabBar.m in Sources */,
 				4F0C28C81FEA3DD500FC78A3 /* subModelForIncludeController.m in Sources */,
 				4F0C28C41FEA3A3400FC78A3 /* rootIncludeController.m in Sources */,
 				4F8D52B91FEB91B70035F2FC /* navigationButton.m in Sources */,
@@ -509,8 +505,8 @@
 				4F54EF7C1FB04C5100291B70 /* newViewController.m in Sources */,
 				84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */,
 				4F0C28CB1FEB4F0A00FC78A3 /* navigationView.m in Sources */,
-				4F54EF731FB0474500291B70 /* productMainTabBarController.m in Sources */,
 				4F54EF401FB0460000291B70 /* AppDelegate.m in Sources */,
+				4F889CA71FECB0E8000B4B2C /* customTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

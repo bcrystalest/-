@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self addNavigationBar];
-    [self setNavigationBarTitle:@"holy shit" withPopButton:YES];
+    [self setNavigationBarTitle:@"whenever" withPopButton:YES];
     [self setRightButton];
 //    newUserGuideView *view =[[newUserGuideView alloc]initWithFrame:self.view.bounds];
 //    [self.view addSubview:view];

@@ -32,7 +32,7 @@
         subModelForIncludeController *guideModel = [subModelForIncludeController new];
         guideModel.selfViewController = [GuideViewController new];
         subModelForIncludeController *mainPageModel = [subModelForIncludeController new];
-        mainPageModel.selfViewController = [productMainTabBarController new];
+        mainPageModel.selfViewController = [customTabBarController new];
         vc.vcArray = [NSMutableArray arrayWithObjects:guideModel,mainPageModel, nil];
         [vc inSequence];
         self.window.rootViewController = vc;
@@ -43,8 +43,8 @@
         // 2.设置窗口的根控制器
         self.window.rootViewController = vc;
         vc.block = ^{
-            productMainTabBarController *tabBarVC = [[productMainTabBarController alloc]init];
-            weakSelf.window.rootViewController = tabBarVC;
+//            productMainTabBarController *tabBarVC = [[productMainTabBarController alloc]init];
+//            weakSelf.window.rootViewController = tabBarVC;
         };
     }
 //    productMainTabBarController *tabBarVC = [[productMainTabBarController alloc]init];

@@ -7,7 +7,6 @@
 //
 
 #import "GuideViewController.h"
-#import "productMainTabBarController.h"
 
 @interface GuideViewController ()<UIScrollViewDelegate>
 {

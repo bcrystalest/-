@@ -72,8 +72,8 @@
         self.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
         edgeY = 20;
     }else{
-        self.frame = CGRectMake(0, 0, SCREEN_WIDTH, 80);
-        edgeY = 0;
+        self.frame = CGRectMake(0, 0, SCREEN_WIDTH, 70);
+        edgeY = 10;
     }
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.titleLabel];

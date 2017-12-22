@@ -21,9 +21,8 @@
 
 #import "navigationView.h"
 #import "RootViewController.h"
-#import "productMainTabBarController.h"
+#import "customTabBarController.h"
 #import "newViewController.h"
-#import "newUserGuideView.h"
 #import "rootIncludeController.h"
 #import "Masonry.h"
 #import "navigationButton.h"
