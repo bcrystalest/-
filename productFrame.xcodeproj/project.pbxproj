@@ -37,6 +37,9 @@
 		841B041F1FF0CDBC009F52A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B041E1FF0CDBC009F52A2 /* Foundation.framework */; };
 		841B04211FF0CDC3009F52A2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B04201FF0CDC3009F52A2 /* CFNetwork.framework */; };
 		841B04231FF0CDCD009F52A2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B04221FF0CDCD009F52A2 /* CoreMotion.framework */; };
+		841B042B1FF0DE58009F52A2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B042A1FF0DE58009F52A2 /* Security.framework */; };
+		841B042D1FF0DEA7009F52A2 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B042C1FF0DEA7009F52A2 /* libsqlite3.0.tbd */; };
+		841B04321FF0E22D009F52A2 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B04311FF0E22D009F52A2 /* libWeChatSDK.a */; };
 		84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4DDD41FDE59500026CED5 /* GuideViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +109,12 @@
 		841B041E1FF0CDBC009F52A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		841B04201FF0CDC3009F52A2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		841B04221FF0CDCD009F52A2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		841B042A1FF0DE58009F52A2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		841B042C1FF0DEA7009F52A2 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		841B04311FF0E22D009F52A2 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		841B04331FF0E237009F52A2 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		841B04341FF0E237009F52A2 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		841B04351FF0E237009F52A2 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		84C4DDD31FDE59500026CED5 /* GuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		84C4DDD41FDE59500026CED5 /* GuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		96086AECA14E4B963C1E7CD9 /* Pods-productFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-productFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-productFrame/Pods-productFrame.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,16 +126,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841B04131FF0CD73009F52A2 /* SystemConfiguration.framework in Frameworks */,
-				841B04231FF0CDCD009F52A2 /* CoreMotion.framework in Frameworks */,
-				841B04211FF0CDC3009F52A2 /* CFNetwork.framework in Frameworks */,
 				841B041F1FF0CDBC009F52A2 /* Foundation.framework in Frameworks */,
 				841B041D1FF0CDB1009F52A2 /* UIKit.framework in Frameworks */,
+				841B04321FF0E22D009F52A2 /* libWeChatSDK.a in Frameworks */,
+				841B042D1FF0DEA7009F52A2 /* libsqlite3.0.tbd in Frameworks */,
+				841B04111FF0CD6A009F52A2 /* libz.tbd in Frameworks */,
+				841B04131FF0CD73009F52A2 /* SystemConfiguration.framework in Frameworks */,
+				841B04151FF0CD7C009F52A2 /* CoreTelephony.framework in Frameworks */,
+				841B042B1FF0DE58009F52A2 /* Security.framework in Frameworks */,
+				841B04211FF0CDC3009F52A2 /* CFNetwork.framework in Frameworks */,
+				841B04231FF0CDCD009F52A2 /* CoreMotion.framework in Frameworks */,
 				841B041B1FF0CDA9009F52A2 /* CoreGraphics.framework in Frameworks */,
 				841B04171FF0CD84009F52A2 /* QuartzCore.framework in Frameworks */,
 				841B04191FF0CD8E009F52A2 /* CoreText.framework in Frameworks */,
-				841B04151FF0CD7C009F52A2 /* CoreTelephony.framework in Frameworks */,
-				841B04111FF0CD6A009F52A2 /* libz.tbd in Frameworks */,
 				841B040F1FF0CD62009F52A2 /* libc++.tbd in Frameworks */,
 				52CF90D9136BE1863A82BD46 /* libPods-productFrame.a in Frameworks */,
 				841B040D1FF0CD45009F52A2 /* AlipaySDK.framework in Frameworks */,
@@ -318,6 +330,8 @@
 		72FDF2ED7E937F45F2618BBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				841B042C1FF0DEA7009F52A2 /* libsqlite3.0.tbd */,
+				841B042A1FF0DE58009F52A2 /* Security.framework */,
 				841B04221FF0CDCD009F52A2 /* CoreMotion.framework */,
 				841B04201FF0CDC3009F52A2 /* CFNetwork.framework */,
 				841B041E1FF0CDBC009F52A2 /* Foundation.framework */,
@@ -337,6 +351,7 @@
 		841B04081FF0CD06009F52A2 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
+				841B04241FF0D39D009F52A2 /* WeChat */,
 				841B04091FF0CD3A009F52A2 /* Alipay */,
 			);
 			path = Pay;
@@ -349,6 +364,17 @@
 				841B040B1FF0CD45009F52A2 /* AlipaySDK.framework */,
 			);
 			path = Alipay;
+			sourceTree = "<group>";
+		};
+		841B04241FF0D39D009F52A2 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				841B04311FF0E22D009F52A2 /* libWeChatSDK.a */,
+				841B04331FF0E237009F52A2 /* WechatAuthSDK.h */,
+				841B04341FF0E237009F52A2 /* WXApi.h */,
+				841B04351FF0E237009F52A2 /* WXApiObject.h */,
+			);
+			path = WeChat;
 			sourceTree = "<group>";
 		};
 		84C4DDCF1FDE58BB0026CED5 /* Guide */ = {
@@ -743,6 +769,10 @@
 				INFOPLIST_FILE = productFrame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/productFrame/Pay/WeChat",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-34112686-163.com.productFrame11111";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -766,6 +796,10 @@
 				INFOPLIST_FILE = productFrame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/productFrame/Pay/WeChat",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-34112686-163.com.productFrame11111";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
