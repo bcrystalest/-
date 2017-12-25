@@ -53,10 +53,10 @@
         [self.navBar addBackButton];
     }
 }
-
-- (void)setRightButton{
+- (void)setRightButtonWithType:(navButtonType *)type andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font
+{
     foreoWeakSelf;
-    [self.navBar addRightButton];
+    [self.navBar addRightButtonWithType:type andTitle:title andImage:image andTextFont:font];
     _navBar.rightClickBlock = ^{
         [weakSelf rightClickAction];
     };

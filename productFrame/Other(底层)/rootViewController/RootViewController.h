@@ -26,7 +26,7 @@ typedef void(^choicePageBlock)(void);
 ///设置navigaiotnBar的属性
 - (void)addNavigationBar;
 - (void)setNavigationBarTitle:(NSString *)title withPopButton:(BOOL)isHidden;
-- (void)setRightButton;
+- (void)setRightButtonWithType:(navButtonType *)type andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font;
 //-(void)addBarItem:(NSString *)title withImage:(NSString *)imageName withBackGroundImage:(NSString *)backGroundImage withDirection:(NSString *)direction;
 
 

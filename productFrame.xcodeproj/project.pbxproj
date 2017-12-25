@@ -17,10 +17,12 @@
 		4F54EF631FB0460100291B70 /* productFrameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF621FB0460100291B70 /* productFrameUITests.m */; };
 		4F54EF791FB04B0D00291B70 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF771FB0496500291B70 /* RootViewController.m */; };
 		4F54EF7C1FB04C5100291B70 /* newViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF7B1FB04C5100291B70 /* newViewController.m */; };
+		4F7716761FF09E9D007F098A /* codeScannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7716751FF09E9D007F098A /* codeScannerVC.m */; };
 		4F889CA11FECABA7000B4B2C /* 集成功能.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F889CA01FECABA7000B4B2C /* 集成功能.txt */; };
 		4F889CA61FECB0E8000B4B2C /* customTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F889CA31FECB0E7000B4B2C /* customTabBar.m */; };
 		4F889CA71FECB0E8000B4B2C /* customTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F889CA51FECB0E8000B4B2C /* customTabBarController.m */; };
-		4F8D52B91FEB91B70035F2FC /* navigationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D52B81FEB91B70035F2FC /* navigationButton.m */; };
+		4F889CAA1FECCD1D000B4B2C /* navigationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F889CA91FECCD1D000B4B2C /* navigationButton.m */; };
+		4F8D52B91FEB91B70035F2FC /* navigationButton22.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D52B81FEB91B70035F2FC /* navigationButton22.m */; };
 		4F9E39071FD8E3EB00648B0C /* newViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E39061FD8E3EB00648B0C /* newViewController2.m */; };
 		52CF90D9136BE1863A82BD46 /* libPods-productFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11247647D970C8D6A44D3263 /* libPods-productFrame.a */; };
 		84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4DDD41FDE59500026CED5 /* GuideViewController.m */; };
@@ -68,13 +70,17 @@
 		4F54EF781FB0496500291B70 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		4F54EF7A1FB04C5100291B70 /* newViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newViewController.h; sourceTree = "<group>"; };
 		4F54EF7B1FB04C5100291B70 /* newViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newViewController.m; sourceTree = "<group>"; };
+		4F7716741FF09E9D007F098A /* codeScannerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codeScannerVC.h; sourceTree = "<group>"; };
+		4F7716751FF09E9D007F098A /* codeScannerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = codeScannerVC.m; sourceTree = "<group>"; };
 		4F889CA01FECABA7000B4B2C /* 集成功能.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "集成功能.txt"; sourceTree = "<group>"; };
 		4F889CA21FECB0E7000B4B2C /* customTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customTabBarController.h; sourceTree = "<group>"; };
 		4F889CA31FECB0E7000B4B2C /* customTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customTabBar.m; sourceTree = "<group>"; };
 		4F889CA41FECB0E8000B4B2C /* customTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customTabBar.h; sourceTree = "<group>"; };
 		4F889CA51FECB0E8000B4B2C /* customTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customTabBarController.m; sourceTree = "<group>"; };
-		4F8D52B71FEB91B70035F2FC /* navigationButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = navigationButton.h; sourceTree = "<group>"; };
-		4F8D52B81FEB91B70035F2FC /* navigationButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navigationButton.m; sourceTree = "<group>"; };
+		4F889CA81FECCD1D000B4B2C /* navigationButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = navigationButton.h; sourceTree = "<group>"; };
+		4F889CA91FECCD1D000B4B2C /* navigationButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navigationButton.m; sourceTree = "<group>"; };
+		4F8D52B71FEB91B70035F2FC /* navigationButton22.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = navigationButton22.h; sourceTree = "<group>"; };
+		4F8D52B81FEB91B70035F2FC /* navigationButton22.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navigationButton22.m; sourceTree = "<group>"; };
 		4F9E39051FD8E3EB00648B0C /* newViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newViewController2.h; sourceTree = "<group>"; };
 		4F9E39061FD8E3EB00648B0C /* newViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newViewController2.m; sourceTree = "<group>"; };
 		84C4DDD31FDE59500026CED5 /* GuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
@@ -156,7 +162,6 @@
 			children = (
 				4F9E38FE1FD8DABA00648B0C /* Classes */,
 				4F9E38FD1FD8DAB800648B0C /* Other(底层) */,
-				4F9E38FC1FD8DAB200648B0C /* New Group */,
 				4F54EF3E1FB0460000291B70 /* AppDelegate.h */,
 				4F54EF3F1FB0460000291B70 /* AppDelegate.m */,
 				4F54EF471FB0460000291B70 /* Assets.xcassets */,
@@ -218,20 +223,24 @@
 			path = rootViewController;
 			sourceTree = "<group>";
 		};
+		4F7716731FF09743007F098A /* ScanView */ = {
+			isa = PBXGroup;
+			children = (
+				4F7716741FF09E9D007F098A /* codeScannerVC.h */,
+				4F7716751FF09E9D007F098A /* codeScannerVC.m */,
+			);
+			path = ScanView;
+			sourceTree = "<group>";
+		};
 		4F8D52B61FEB919F0035F2FC /* view */ = {
 			isa = PBXGroup;
 			children = (
-				4F8D52B71FEB91B70035F2FC /* navigationButton.h */,
-				4F8D52B81FEB91B70035F2FC /* navigationButton.m */,
+				4F8D52B71FEB91B70035F2FC /* navigationButton22.h */,
+				4F8D52B81FEB91B70035F2FC /* navigationButton22.m */,
+				4F889CA81FECCD1D000B4B2C /* navigationButton.h */,
+				4F889CA91FECCD1D000B4B2C /* navigationButton.m */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		4F9E38FC1FD8DAB200648B0C /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		4F9E38FD1FD8DAB800648B0C /* Other(底层) */ = {
@@ -257,6 +266,7 @@
 		4F9E39001FD8DC3500648B0C /* UnitView */ = {
 			isa = PBXGroup;
 			children = (
+				4F7716731FF09743007F098A /* ScanView */,
 				84C4DDCF1FDE58BB0026CED5 /* Guide */,
 			);
 			path = UnitView;
@@ -500,10 +510,12 @@
 				4F889CA61FECB0E8000B4B2C /* customTabBar.m in Sources */,
 				4F0C28C81FEA3DD500FC78A3 /* subModelForIncludeController.m in Sources */,
 				4F0C28C41FEA3A3400FC78A3 /* rootIncludeController.m in Sources */,
-				4F8D52B91FEB91B70035F2FC /* navigationButton.m in Sources */,
+				4F8D52B91FEB91B70035F2FC /* navigationButton22.m in Sources */,
 				4F54EF4E1FB0460000291B70 /* main.m in Sources */,
+				4F7716761FF09E9D007F098A /* codeScannerVC.m in Sources */,
 				4F54EF7C1FB04C5100291B70 /* newViewController.m in Sources */,
 				84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */,
+				4F889CAA1FECCD1D000B4B2C /* navigationButton.m in Sources */,
 				4F0C28CB1FEB4F0A00FC78A3 /* navigationView.m in Sources */,
 				4F54EF401FB0460000291B70 /* AppDelegate.m in Sources */,
 				4F889CA71FECB0E8000B4B2C /* customTabBarController.m in Sources */,

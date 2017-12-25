@@ -3,10 +3,10 @@
 navigationBar左右按钮
 首次登陆引导页面
 控制器切换功能
-
+自定义tabbarcontroller
 未集成
 
-自定义tabbarcontroller
+
 
 蓝牙
 第三方登录(支付宝微信)

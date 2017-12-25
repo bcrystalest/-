@@ -10,7 +10,7 @@
 
 
 @interface rootIncludeController ()
-@property (nonatomic, strong)RootViewController *currentVC;
+
 
 
 @end
@@ -71,6 +71,7 @@
             RootViewController *vc = model.selfViewController;
             [vc.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
             [self addChildViewController:vc];
+
         }
     }
 }
