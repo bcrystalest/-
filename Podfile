@@ -11,5 +11,6 @@ pod 'UMengUShare/UI'
 pod 'UMengUShare/Social/WeChat'
 pod 'UMengUShare/Social/ReducedSina'
 
-pod 'MLinksFinder'
+pod 'Stripe'
+
 end

@@ -12,6 +12,7 @@
 #import <UMSocialCore/UMSocialCore.h>
 #import <AlipaySDK/AlipaySDK.h>
 #import "WXApi.h"
+#import "STPPaymentContext.h"
 
 #define USHARE_DEMO_APPKEY @"5861e5daf5ade41326001eab"
 @interface AppDelegate ()<WXApiDelegate>
@@ -23,6 +24,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     foreoWeakSelf;
+    /*****  strip 集成 *****/
+    [[STPPaymentConfiguration sharedConfiguration] setPublishableKey:@"pk_test_6pRNASCoBOKtIshFeQd4XMUh"];
 
     /* 打开调试日志 */
     [[UMSocialManager defaultManager] openLog:YES];
