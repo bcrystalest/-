@@ -113,7 +113,12 @@
 }
 
 - (void)rightClickAction{
-    NSLog(@"1231231");
+    codeScannerVC *scanner = [[codeScannerVC alloc] init];
+    [self presentViewController:scanner animated:YES completion:nil];
+    scanner.resultBlock = ^(NSString *value) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:value message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    };
 }
 
 /*

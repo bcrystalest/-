@@ -26,3 +26,4 @@
 #import "rootIncludeController.h"
 #import "Masonry.h"
 #import "navigationButton.h"
+#import "codeScannerVC.h"

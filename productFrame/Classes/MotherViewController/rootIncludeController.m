@@ -66,7 +66,6 @@
                 [weakSelf replaceController:weakSelf.currentVC newController:nextModel.selfViewController];
             };
         }else{
-            
             subModelForIncludeController *model = _vcArray[i];
             RootViewController *vc = model.selfViewController;
             [vc.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];

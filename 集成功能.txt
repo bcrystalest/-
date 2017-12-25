@@ -4,7 +4,7 @@ navigationBar左右按钮
 首次登陆引导页面
 控制器切换功能
 自定义tabbarcontroller
-未集成
+扫码
 
 
 
