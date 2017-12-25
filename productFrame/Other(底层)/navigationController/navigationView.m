@@ -7,7 +7,7 @@
 //
 
 #import "navigationView.h"
-
+#import "navigationButton.h"
 @interface navigationView()
 @property (nonatomic, strong)UILabel *titleLabel;
 @property (nonatomic, strong)navigationButton *backButton;
@@ -37,24 +37,14 @@
 - (navigationButton *)backButton{
     if (_backButton == nil) {
         _backButton = [[navigationButton alloc]initWithType:leftImgRightText];
-//        _backButton.backgroundColor = [UIColor redColor];
-        [_backButton setImage:[[UIImage imageNamed:@"backButton"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
-        [_backButton setImage:[[UIImage imageNamed:@"backButton"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-        [_backButton setTitle:@"返回" forState:UIControlStateNormal];
-        [_backButton setTitleColor:[UIColor colorWithRed:0.749 green:0.749 blue:0.749 alpha:1.00] forState:UIControlStateNormal];
+        [_backButton setTitle:@"返回" andImage:[UIImage imageNamed:@"backButton"]];
     }
     return _backButton;
 }
 
 - (navigationButton *)rightButton{
     if (_rightButton == nil) {
-        _rightButton = [[navigationButton alloc]initWithType:upImgDownText];
-        [_rightButton setImage:[[UIImage imageNamed:@"remark"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
-        [_rightButton setImage:[[UIImage imageNamed:@"remark"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-        [_rightButton setTitle:@"回返回返回" forState:UIControlStateNormal];
-        _rightButton.titleLabel.font = [UIFont systemFontOfSize:13];
-        _rightButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [_rightButton setTitleColor:[UIColor colorWithRed:0.749 green:0.749 blue:0.749 alpha:1.00] forState:UIControlStateNormal];
+        _rightButton = [navigationButton new];
     }
     return _rightButton;
 }
@@ -103,21 +93,46 @@
         make.left.equalTo(weakSelf.mas_left).offset(5);
         make.centerY.equalTo(weakSelf.mas_centerY).offset(edgeY);
         make.height.mas_equalTo(40);
-        make.width.mas_equalTo(70);
+
     }];
-    [_backButton addTarget:self action:@selector(goBackAction) forControlEvents:UIControlEventTouchUpInside];
+
+    _backButton.clickBlock = ^{
+        [weakSelf goBackAction];
+    };
 }
 
-- (void)addRightButton{
+- (void)addRightButtonWithType:(navButtonType *)btnType andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font{
     foreoWeakSelf;
+    navigationButton *btn = [[navigationButton alloc]initWithType:btnType];
+//    [[navigationButton alloc]initWithType:upImgDownText];
+    btn.titleLabel.font = [UIFont systemFontOfSize:font];
+    [btn setTitle:title andImage:image];
+    self.rightButton = btn;
     [self addSubview:self.rightButton];
-    [_rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf.mas_right).offset(0);
+    /*typedef enum :NSInteger {
+     leftImgRightText,   ///左图右字
+     leftTextRightImage,  /// 左字右图
+     upImgDownText, /// 上字下图
+     upTextDownImg, /// 上图下字
+     onlyImg, ///纯图
+     onlyText ///纯文字
+     }navButtonType;
+*/
+    
+    [_rightButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(weakSelf.mas_right).offset(-5);
         make.centerY.equalTo(weakSelf.mas_centerY).offset(edgeY);
-        make.height.mas_equalTo(50);
-        make.width.mas_equalTo(70);
+        if (btnType == leftImgRightText || btnType == leftImgRightText){
+            make.height.mas_equalTo(40);
+        }else{
+            make.width.mas_equalTo(50);
+        }
     }];
-    [_rightButton addTarget:self action:@selector(rightClickAction) forControlEvents:UIControlEventTouchUpInside];
+    
+
+    _rightButton.clickBlock = ^{
+        [weakSelf rightClickAction];
+    };
 }
 
 

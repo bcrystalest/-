@@ -51,7 +51,7 @@
     if (KIsiPhoneX) {
         self.centerBtn.center = CGPointMake(barWidth / 2, barHeight - centerBtnHeight/2 - 5 - 40);
     }else{
-        self.centerBtn.center = CGPointMake(barWidth / 2, barHeight - centerBtnHeight/2 - 5);
+        self.centerBtn.center = CGPointMake(barWidth / 2, barHeight - centerBtnHeight/2 - 5 - 10);
     }
     
     // 重新布局其他tabBarItem
@@ -84,11 +84,17 @@
         [alertController dismissViewControllerAnimated:YES completion:nil];
     }];
     [alertController addAction:action];
+    NSLog(@"点击了中间的按钮");
     // 可以这样获取tabBarController
-    id delegate = [UIApplication sharedApplication].delegate;
-    UITabBarController *tabBarController = [delegate tabBarController];
+    if ([[UIApplication sharedApplication].delegate.window.rootViewController isKindOfClass:[rootIncludeController class]]) {
+        rootIncludeController *mainVC = (rootIncludeController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+        [mainVC.currentVC presentViewController:alertController animated:YES completion:nil];
+    }
     
-    [tabBarController.selectedViewController presentViewController:alertController animated:YES completion:nil];
+//    id delegate = [UIApplication sharedApplication].delegate;
+//    UITabBarController *tabBarController = [delegate tabBarController];
+    
+//    [tabBarController.selectedViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - Getter

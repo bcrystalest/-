@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "subModelForIncludeController.h"
 @interface rootIncludeController : UIViewController
+@property (nonatomic, strong)RootViewController *currentVC;
 @property (nonatomic, strong)NSMutableArray *vcArray;
 ///按顺序排
 - (void)inSequence;
