@@ -101,7 +101,7 @@
     };
 }
 
-- (void)addRightButtonWithType:(navButtonType *)btnType andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font{
+- (void)addRightButtonWithType:(navButtonType)btnType andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font{
     foreoWeakSelf;
     navigationButton *btn = [[navigationButton alloc]initWithType:btnType];
 //    [[navigationButton alloc]initWithType:upImgDownText];

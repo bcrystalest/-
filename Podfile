@@ -1,6 +1,6 @@
 platform :ios, '8.0'
 
-project '/Users/admin/Desktop/Foreo/productFrame.xcodeproj'
+project '/Users/chenweili/easyProductFrame/productFrame.xcodeproj'
 target 'productFrame' do
 
 
@@ -10,6 +10,6 @@ pod 'AFNetworking', '~> 3.0'
 pod 'UMengUShare/UI'
 pod 'UMengUShare/Social/WeChat'
 pod 'UMengUShare/Social/ReducedSina'
+pod 'SVProgressHUD'
 
-pod 'MLinksFinder'
 end

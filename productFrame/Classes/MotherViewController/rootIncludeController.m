@@ -24,7 +24,7 @@
 }
 
 - (void)configUI{
-    __weak typeof(self) weakSelf = self;
+//    __weak typeof(self) weakSelf = self;
     self.view.backgroundColor = [UIColor whiteColor];
     
     

@@ -3,6 +3,38 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[newViewController viewDidLoad]:newViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "sin(22.5*M_PI)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[newViewController drawCycleWithStart:]:newViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "startAngle*M_PI">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[newViewController drawCycleWithStart:and:]:newViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "layer.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__32-[navigationView layoutSubviews]_block_invoke:navigationView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "weakSelf.frame.size.height-edgeY">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[customTabBar clickCenterBtn]:customTabBar.m">
          <PersistentStrings>
             <PersistentString
@@ -19,26 +51,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[newViewController drawCycleWithStart:and:]:newViewController.m">
+         contextName = "-[newViewController judge:]:newViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "layer.frame">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[newViewController drawCycleWithStart:]:newViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "startAngle*M_PI">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "__32-[navigationView layoutSubviews]_block_invoke:navigationView.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "weakSelf.frame.size.height-edgeY">
+               value = "judgeLayer.bounds">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

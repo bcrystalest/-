@@ -53,7 +53,7 @@
         [self.navBar addBackButton];
     }
 }
-- (void)setRightButtonWithType:(navButtonType *)type andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font
+- (void)setRightButtonWithType:(navButtonType)type andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font
 {
     foreoWeakSelf;
     [self.navBar addRightButtonWithType:type andTitle:title andImage:image andTextFont:font];
