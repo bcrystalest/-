@@ -19,6 +19,9 @@
 #define KIsiPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 #endif /* one_pch */
 
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a/1.0]
+#define WS(weakSelf)        __weak __typeof(&*self) weakSelf = self;
+
 #import "navigationView.h"
 #import "RootViewController.h"
 #import "customTabBarController.h"
@@ -27,3 +30,4 @@
 #import "Masonry.h"
 #import "navigationButton.h"
 #import "codeScannerVC.h"
+#import "UIView+Frame.h"

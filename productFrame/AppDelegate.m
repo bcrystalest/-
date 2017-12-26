@@ -14,7 +14,8 @@
 #import "WXApi.h"
 #import "STPPaymentContext.h"
 
-#define USHARE_DEMO_APPKEY @"5861e5daf5ade41326001eab"
+#define kAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
 @interface AppDelegate ()<WXApiDelegate>
 
 @end
@@ -31,8 +32,17 @@
     [[UMSocialManager defaultManager] openLog:YES];
     
     /* 设置友盟appkey */
-    [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_DEMO_APPKEY];
+    [[UMSocialManager defaultManager] setUmSocialAppkey:@"5628c1d067e58e6f68004a32"];
     
+    //设置微信的appKey和appSecret
+    
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
+    
+    //设置新浪的appKey和appSecret
+    
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954" appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    
+   
     /***** 注册微信支付 *****/
     [WXApi registerApp:@"wxb4ba3c02aa476ea1"];
 
@@ -133,17 +143,22 @@
 // NOTE: 9.0以后Aplipay使用新API接口
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
-    if ([url.host isEqualToString:@"safepay"]) {
-        //跳转支付宝钱包进行支付，处理支付结果
-        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            NSLog(@"result = %@",resultDic);
-        }];
-    }else if ([url.host isEqualToString:@"pay"]) {
-        // 处理微信的支付结果
-        [WXApi handleOpenURL:url delegate:self];
+    BOOL result = [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
+    if (!result) {
+        // 其他如支付等SDK的回调
+        if ([url.host isEqualToString:@"safepay"]) {
+            //跳转支付宝钱包进行支付，处理支付结果
+            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+                NSLog(@"result = %@",resultDic);
+            }];
+        }else if ([url.host isEqualToString:@"pay"]) {
+            // 处理微信的支付结果
+            [WXApi handleOpenURL:url delegate:self];
+        }
+        
+        return YES;
     }
-    
-    return YES;
+    return result;
 }
 
 //显示支付结果的

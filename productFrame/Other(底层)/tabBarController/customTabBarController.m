@@ -9,6 +9,7 @@
 #import "customTabBarController.h"
 #import "customTabBar.h"
 #import "newViewController2.h"
+#import "ActivityViewController.h"
 
 @interface customTabBarController ()
 
@@ -39,7 +40,7 @@
     newViewController2 *homeVC = [[newViewController2 alloc] init];
     [self addChildViewController:homeVC title:@"首页" imageNamed:@"tabBar_home"];
     
-    newViewController2 *activityVC = [[newViewController2 alloc] init];
+    ActivityViewController *activityVC = [[ActivityViewController alloc] init];
     [self addChildViewController:activityVC title:@"活动" imageNamed:@"tabBar_activity"];
     
     newViewController2 *findVC = [[newViewController2 alloc] init];
