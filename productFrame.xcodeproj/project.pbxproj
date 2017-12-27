@@ -48,6 +48,8 @@
 		8428DA3C1FF1E50600B22468 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8428DA3B1FF1E50600B22468 /* UIView+Frame.m */; };
 		8428DA3F1FF2118600B22468 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8428DA3E1FF2118600B22468 /* UserInfo.m */; };
 		8428DA431FF216CC00B22468 /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8428DA421FF216CC00B22468 /* ShareView.m */; };
+		8428DA461FF253DD00B22468 /* ProductionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8428DA451FF253DD00B22468 /* ProductionDetailViewController.m */; };
+		8428DA491FF33BF900B22468 /* payView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8428DA481FF33BF900B22468 /* payView.m */; };
 		84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4DDD41FDE59500026CED5 /* GuideViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +141,10 @@
 		8428DA3E1FF2118600B22468 /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		8428DA411FF216CC00B22468 /* ShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
 		8428DA421FF216CC00B22468 /* ShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
+		8428DA441FF253DD00B22468 /* ProductionDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductionDetailViewController.h; sourceTree = "<group>"; };
+		8428DA451FF253DD00B22468 /* ProductionDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductionDetailViewController.m; sourceTree = "<group>"; };
+		8428DA471FF33BF900B22468 /* payView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = payView.h; sourceTree = "<group>"; };
+		8428DA481FF33BF900B22468 /* payView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = payView.m; sourceTree = "<group>"; };
 		84C4DDD31FDE59500026CED5 /* GuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		84C4DDD41FDE59500026CED5 /* GuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		96086AECA14E4B963C1E7CD9 /* Pods-productFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-productFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-productFrame/Pods-productFrame.release.xcconfig"; sourceTree = "<group>"; };
@@ -317,7 +323,7 @@
 		4F9E38FD1FD8DAB800648B0C /* Other(底层) */ = {
 			isa = PBXGroup;
 			children = (
-				8428DA401FF215DB00B22468 /* Share */,
+				8428DA401FF215DB00B22468 /* FeaturesView */,
 				4F54EF741FB047FA00291B70 /* one.pch */,
 				8428DA321FF1E24000B22468 /* Register */,
 				8428DA311FF1E23500B22468 /* LogIn */,
@@ -421,6 +427,8 @@
 			children = (
 				8428DA241FF1050600B22468 /* ActivityViewController.h */,
 				8428DA251FF1050600B22468 /* ActivityViewController.m */,
+				8428DA441FF253DD00B22468 /* ProductionDetailViewController.h */,
+				8428DA451FF253DD00B22468 /* ProductionDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -472,13 +480,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		8428DA401FF215DB00B22468 /* Share */ = {
+		8428DA401FF215DB00B22468 /* FeaturesView */ = {
 			isa = PBXGroup;
 			children = (
 				8428DA411FF216CC00B22468 /* ShareView.h */,
 				8428DA421FF216CC00B22468 /* ShareView.m */,
+				8428DA471FF33BF900B22468 /* payView.h */,
+				8428DA481FF33BF900B22468 /* payView.m */,
 			);
-			path = Share;
+			path = FeaturesView;
 			sourceTree = "<group>";
 		};
 		84C4DDCF1FDE58BB0026CED5 /* Guide */ = {
@@ -706,6 +716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8428DA461FF253DD00B22468 /* ProductionDetailViewController.m in Sources */,
 				4F54EF791FB04B0D00291B70 /* RootViewController.m in Sources */,
 				8428DA351FF1E3A900B22468 /* RegisterViewController.m in Sources */,
 				4F9E39071FD8E3EB00648B0C /* newViewController2.m in Sources */,
@@ -723,6 +734,7 @@
 				8428DA291FF1088400B22468 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				8428DA301FF10A7200B22468 /* ActivityCollectionViewCell.m in Sources */,
 				4F889CAA1FECCD1D000B4B2C /* navigationButton.m in Sources */,
+				8428DA491FF33BF900B22468 /* payView.m in Sources */,
 				8428DA381FF1E40100B22468 /* LogInViewController.m in Sources */,
 				4F0C28CB1FEB4F0A00FC78A3 /* navigationView.m in Sources */,
 				4F54EF401FB0460000291B70 /* AppDelegate.m in Sources */,

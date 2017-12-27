@@ -68,15 +68,12 @@
             [self.platFormView addSubview:button];
         }
         
-        
-        
         UIImageView *lineView  = [[UIImageView alloc] initWithFrame:CGRectMake(5, 210 + 20, SCREEN_WIDTH - 10, 1)];
 //        lineView.image         = lineImage;
         lineView.contentMode   = UIViewContentModeBottom;
         lineView.clipsToBounds = YES;
         [self.platFormView addSubview:lineView];
         lineView.backgroundColor = RGBA(155, 155, 155, 0.5);
-        
         
 //        self.deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //        self.deleteButton.frame = CGRectMake(0, lineView.bottom, SCREEN_WIDTH, 45);

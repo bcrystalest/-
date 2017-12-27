@@ -12,6 +12,7 @@
 #import "LogInViewController.h"
 #import "ShareView.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import "ProductionDetailViewController.h"
 
 @interface ActivityViewController ()<UICollectionViewDataSource,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout>
 
@@ -191,6 +192,10 @@
             [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
             
         }];
+    }else if (indexPath.item == 1){
+        ProductionDetailViewController *detail = [[ProductionDetailViewController alloc]init];
+        [self.navigationController pushViewController:detail animated:YES];
+        
     }else{
         [[UIApplication sharedApplication].keyWindow addSubview:self.shareView];
         [self.shareView show];
