@@ -21,6 +21,6 @@ typedef enum :NSInteger {
 @property (nonatomic, copy) buttonClickBlock rightClickBlock;
 - (void)addNavigationBarTitle:(NSString *)titleString;
 - (void)addBackButton;
-- (void)addRightButtonWithType:(navButtonType *)btnType andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font;
+- (void)addRightButtonWithType:(navButtonType)btnType andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font;
 
 @end

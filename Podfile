@@ -10,7 +10,7 @@ pod 'AFNetworking', '~> 3.0'
 pod 'UMengUShare/UI'
 pod 'UMengUShare/Social/WeChat'
 pod 'UMengUShare/Social/ReducedSina'
-
+pod 'SVProgressHUD'
 pod 'Stripe'
 
 end

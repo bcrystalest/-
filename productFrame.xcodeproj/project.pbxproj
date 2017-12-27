@@ -10,6 +10,7 @@
 		4F0C28C41FEA3A3400FC78A3 /* rootIncludeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C28C31FEA3A3400FC78A3 /* rootIncludeController.m */; };
 		4F0C28C81FEA3DD500FC78A3 /* subModelForIncludeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C28C71FEA3DD500FC78A3 /* subModelForIncludeController.m */; };
 		4F0C28CB1FEB4F0A00FC78A3 /* navigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C28CA1FEB4F0A00FC78A3 /* navigationView.m */; };
+		4F5079D31FF0DAF700457F05 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5079D21FF0DAF700457F05 /* NetWorkRequest.m */; };
 		4F54EF401FB0460000291B70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF3F1FB0460000291B70 /* AppDelegate.m */; };
 		4F54EF481FB0460000291B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F54EF471FB0460000291B70 /* Assets.xcassets */; };
 		4F54EF4E1FB0460000291B70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F54EF4D1FB0460000291B70 /* main.m */; };
@@ -78,6 +79,8 @@
 		4F0C28C71FEA3DD500FC78A3 /* subModelForIncludeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = subModelForIncludeController.m; sourceTree = "<group>"; };
 		4F0C28C91FEB4F0A00FC78A3 /* navigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = navigationView.h; sourceTree = "<group>"; };
 		4F0C28CA1FEB4F0A00FC78A3 /* navigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navigationView.m; sourceTree = "<group>"; };
+		4F5079D11FF0DAF700457F05 /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
+		4F5079D21FF0DAF700457F05 /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
 		4F54EF3B1FB0460000291B70 /* productFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = productFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F54EF3E1FB0460000291B70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F54EF3F1FB0460000291B70 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -211,6 +214,15 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		4F5079D01FF0DAF700457F05 /* NetWorkTool */ = {
+			isa = PBXGroup;
+			children = (
+				4F5079D11FF0DAF700457F05 /* NetWorkRequest.h */,
+				4F5079D21FF0DAF700457F05 /* NetWorkRequest.m */,
+			);
+			path = NetWorkTool;
+			sourceTree = "<group>";
+		};
 		4F54EF321FB0460000291B70 = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +340,7 @@
 				8428DA321FF1E24000B22468 /* Register */,
 				8428DA311FF1E23500B22468 /* LogIn */,
 				8428DA2A1FF10A2600B22468 /* Activity */,
+				4F5079D01FF0DAF700457F05 /* NetWorkTool */,
 				4F54EF761FB0494E00291B70 /* rootViewController */,
 				4F54EF751FB048DC00291B70 /* navigationController */,
 				4F54EF701FB0470D00291B70 /* tabBarController */,
@@ -678,7 +691,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-productFrame/Pods-productFrame-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/Stripe/Stripe.bundle,
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/Stripe/Stripe.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle",
 			);
@@ -738,6 +752,7 @@
 				8428DA381FF1E40100B22468 /* LogInViewController.m in Sources */,
 				4F0C28CB1FEB4F0A00FC78A3 /* navigationView.m in Sources */,
 				4F54EF401FB0460000291B70 /* AppDelegate.m in Sources */,
+				4F5079D31FF0DAF700457F05 /* NetWorkRequest.m in Sources */,
 				4F889CA71FECB0E8000B4B2C /* customTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -884,7 +899,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8VJNURW6K;
+				DEVELOPMENT_TEAM = J995UNL2CV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/productFrame/Pay/Alipay",
@@ -898,7 +913,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/productFrame/Pay/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-34112686-163.com.productFrame11111";
+				PRODUCT_BUNDLE_IDENTIFIER = "-34112686-163.com.productFrame";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(TARGET_NAME)";
@@ -911,7 +926,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8VJNURW6K;
+				DEVELOPMENT_TEAM = J995UNL2CV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/productFrame/Pay/Alipay",
@@ -925,7 +940,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/productFrame/Pay/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-34112686-163.com.productFrame11111";
+				PRODUCT_BUNDLE_IDENTIFIER = "-34112686-163.com.productFrame";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(TARGET_NAME)";

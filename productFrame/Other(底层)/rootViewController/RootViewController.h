@@ -16,17 +16,15 @@ typedef void(^choicePageBlock)(void);
 @property (nonatomic, copy) choicePageBlock pageChangeActionBlock;
 
 @property (nonatomic, strong)navigationView *navBar;
-//添加titleView
--(void)addTitleView:(NSString *)name;
 //添加左右按钮
--(void)addBarItem:(NSString *)title withBackGroundImage:(NSString *)backGroundImage withDirection:(NSString *)direction;
+
 -(void)leftClick:(UIButton *)btn;
 -(void)rightClickAction;
 - (void)pageChangeAction;
 ///设置navigaiotnBar的属性
 - (void)addNavigationBar;
 - (void)setNavigationBarTitle:(NSString *)title withPopButton:(BOOL)isHidden;
-- (void)setRightButtonWithType:(navButtonType *)type andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font;
+- (void)setRightButtonWithType:(navButtonType)type andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font;
 //-(void)addBarItem:(NSString *)title withImage:(NSString *)imageName withBackGroundImage:(NSString *)backGroundImage withDirection:(NSString *)direction;
 
 

@@ -8,15 +8,21 @@
 
 #import "newViewController.h"
 
-@interface newViewController ()
-
+@interface newViewController ()<UIAlertViewDelegate>
+@property (nonatomic, strong) CALayer *gradientLayer;
 @end
 
 @implementation newViewController
 {
+    UIView *mainImageView;
     NSMutableArray *layerArray;
+    NSMutableArray *imageIconArray;
     CGFloat wwidth;
     UIView *centerView;
+    UIImageView *testView;
+    CAShapeLayer *judgeLayer;
+    CGRect basicFrame;
+    NSInteger willBeChangedModelID;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,14 +33,15 @@
     [self setNavigationBarTitle:@"whenever" withPopButton:YES];//扫码
     [self setRightButtonWithType:upImgDownText andTitle:@"扫码" andImage:[UIImage imageNamed:@"scan"] andTextFont:11];
     
-    centerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
-    centerView.backgroundColor = [UIColor grayColor];
-    centerView.center = self.view.center;
-    [self.view addSubview:centerView];
-    wwidth = centerView.frame.size.width;
+//    centerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+//    centerView.backgroundColor = [UIColor grayColor];
+//    centerView.center = self.view.center;
+//    [self.view addSubview:centerView];
+    imageIconArray = [NSMutableArray new];
     for (NSInteger i = 0; i<8; i++) {
-        [self drawCycleWithStart:0.25*i and:i];
+        [self drawCycleWithStart:0.25*i and:i andGap:0];
     }
+
 //    [self drawcycle];
 //    [UIView animateWithDuration:1.0 animations:^{
 //        [self goAnimatiom];
@@ -42,32 +49,205 @@
 //        [self goAnimatiom];
 //    }];
     
+//    mainImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_WIDTH)];
+//    mainImageView.center = self.view.center;
+//    [self.view addSubview:mainImageView];
+//    mainImageView.image = [UIImage imageNamed:@"1703326970"];
+//    mainImageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    CGFloat r = SCREEN_WIDTH/2-40;
+    CGPoint centerPoint = self.view.center;
+    UIImageView *image = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 10, 10)];
+//    image.image = [UIImage imageNamed:@"xz"];
+    image.backgroundColor = [UIColor blackColor];
+    image.center = centerPoint;
+    [self.view addSubview:image];
+    
+    CGFloat centerPointX = centerPoint.x;
+    CGFloat centerPointY = centerPoint.y;
+    
+    CGFloat x = r*sin(M_PI/(180/22.5));
+    
+    if (x<0) {
+        x=-x;
+    }
+    CGFloat y = r*cos(M_PI/(180/22.5));
+    if (y<0) {
+        y=-y;
+    }
+    
+    CGPoint centerPoint1 = CGPointMake(centerPointX + x, centerPointY - y);
+    CGPoint centerPoint2 = CGPointMake(centerPointX + y, centerPointY - x);
+    CGPoint centerPoint3 = CGPointMake(centerPointX + x, centerPointY + y);
+    CGPoint centerPoint4 = CGPointMake(centerPointX + y, centerPointY + x);
+    CGPoint centerPoint5 = CGPointMake(centerPointX - x, centerPointY + y);
+    CGPoint centerPoint6 = CGPointMake(centerPointX - y, centerPointY + x);
+    CGPoint centerPoint7 = CGPointMake(centerPointX - x, centerPointY - y);
+    CGPoint centerPoint8 = CGPointMake(centerPointX - y, centerPointY - x);
+    NSArray *array = [[NSArray alloc]initWithObjects:[NSValue valueWithCGPoint:centerPoint1],[NSValue valueWithCGPoint:centerPoint2],[NSValue valueWithCGPoint:centerPoint4],[NSValue valueWithCGPoint:centerPoint3],[NSValue valueWithCGPoint:centerPoint5],[NSValue valueWithCGPoint:centerPoint6],[NSValue valueWithCGPoint:centerPoint8],[NSValue valueWithCGPoint:centerPoint7], nil];
+    for (NSInteger i = 0; i < 8; i++) {
+        UIImageView *image = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+        image.image = [UIImage imageNamed:[NSString stringWithFormat:@"number_%ld",(long)(i+1)]];
+        NSValue *value = array[i];
+        CGPoint point = [value CGPointValue];
+        image.center = point;
+        [self.view addSubview:image];
+        [imageIconArray addObject:image];
+        
+    }
+   
+    
+    testView = [UIImageView new];
+    testView.userInteractionEnabled = YES;
+    testView.frame = CGRectMake(self.view.center.x-40, SCREEN_HEIGHT-100, 80, 50);
+    testView.backgroundColor = [UIColor redColor];
+    testView.contentMode = UIViewContentModeScaleAspectFit;
+    testView.image = [UIImage imageNamed:@"number_0"];
+    [self.view addSubview:testView];
+    testView.hidden = YES;
+    
+    basicFrame = CGRectMake(self.view.center.x-40, SCREEN_HEIGHT-100, 80, 50);
+    
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(judge2:)];
+    [testView addGestureRecognizer:pan];
+    
+ 
+
+}
+- (void)judge:(UIPanGestureRecognizer *)recognizer{
+    CGPoint translation = [recognizer translationInView:self.view];
+    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,recognizer.view.center.y + translation.y);
+    [recognizer setTranslation:CGPointZero inView:self.view];
+    if (CGRectIntersectsRect(mainImageView.frame, testView.frame)) {
+        NSLog(@"true");
+    }else{
+        NSLog(@"false");
+    }
+}
+
+- (void)judge2:(UIPanGestureRecognizer *)recognizer{
+    
+    CGPoint translation = [recognizer translationInView:self.view];
+    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,recognizer.view.center.y + translation.y);
+    [recognizer setTranslation:CGPointZero inView:self.view];
+    CGPoint centerPoint = self.view.center;
+    CGFloat x = centerPoint.x;
+    CGFloat y = centerPoint.y;
+    CGFloat trueX = fabs(x-recognizer.view.center.x);
+    CGFloat trueY = fabs(y-recognizer.view.center.y);
+    
+    if ((trueX*trueX +trueY*trueY) < (SCREEN_WIDTH/2+25)*(SCREEN_WIDTH/2+25)) {
+        NSLog(@"true,接触");
+        
+        if (x-recognizer.view.center.x>0 && y-recognizer.view.center.y > 0) {
+            if (trueX>trueY) {
+                NSLog(@"7区");
+            }else{
+                NSLog(@"8区");
+            }
+            
+        }else if (x-recognizer.view.center.x>0 && y-recognizer.view.center.y < 0){
+            if (trueX>trueY) {
+                NSLog(@"6区");
+            }else{
+                NSLog(@"5区");
+            }
+        }else if (x-recognizer.view.center.x<0 && y-recognizer.view.center.y > 0){
+            if (trueX>trueY) {
+                NSLog(@"2区");
+            }else{
+                NSLog(@"1区");
+                if (recognizer.state != UIGestureRecognizerStateEnded) {
+                    return;
+                }
+                [self showAlert:0];
+            }
+        }else{
+            if (trueX>trueY) {
+                NSLog(@"3区");
+            }else{
+                NSLog(@"4区");
+            }
+        }
+    }else{
+        NSLog(@"false,未接触");
+        if (recognizer.state != UIGestureRecognizerStateEnded) {
+            return;
+        }
+        [UIView animateWithDuration:0.3 animations:^{
+            testView.frame = basicFrame;
+        }];
+    }
     
 }
 
-- (void)drawcycle{
-    CAShapeLayer *layer = [CAShapeLayer new];
-    layer.lineWidth = 10;
-    //圆环的颜色
-    layer.strokeColor = [UIColor redColor].CGColor;
-    //背景填充色
-    layer.fillColor = [UIColor clearColor].CGColor;
-    //指定线的边缘是圆的
-    layer.lineCap = kCALineCapRound;
-    //设置半径为10
-    CGFloat radius = 200/2.0f - layer.lineWidth/2.0f;
-    //按照顺时针方向
-    BOOL clockWise = true;
-    //初始化一个路径
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(200/2.0f, 200/2.0f) radius:radius startAngle:(-0.5f*M_PI) endAngle:1.5f*M_PI clockwise:clockWise];
-    layer.path = [path CGPath];
-    [centerView.layer addSublayer:layer];
+- (void)showAlert:(NSInteger)i{
+    testView.hidden = YES;
+    willBeChangedModelID = i;
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"您即将要将%ld号模式进行更新",i] delegate:self cancelButtonTitle:@"好" otherButtonTitles:@"取消",nil];
+    [alertView show];
 }
 
-- (void)drawCycleWithStart:(CGFloat )startAngle and:(NSInteger)i{
+//根据被点击按钮的索引处理点击事件
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        UIImageView *imageView = imageIconArray[willBeChangedModelID];
+        imageView.image = testView.image;
+
+        [self endShark];
+    }else{
+        testView.hidden = NO;
+        [UIView animateWithDuration:0.3 animations:^{
+            testView.frame = basicFrame;
+        }];
+    }
+    NSLog(@"clickButtonAtIndex:%ld",(long)buttonIndex);
+}
+
+
+//- (void)drawcycle{
+//    CAShapeLayer *layer = [CAShapeLayer new];
+//    layer.lineWidth = 10;
+//    //圆环的颜色
+//    layer.strokeColor = [UIColor redColor].CGColor;
+//    //背景填充色
+//    layer.fillColor = [UIColor clearColor].CGColor;
+//    //指定线的边缘是圆的
+//    layer.lineCap = kCALineCapRound;
+//    //设置半径为10
+//    CGFloat radius = 200/2.0f - layer.lineWidth/2.0f;
+//    //按照顺时针方向
+//    BOOL clockWise = true;
+//    //初始化一个路径
+//    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:self.view.center radius:radius startAngle:(-0.5f*M_PI) endAngle:1.5f*M_PI clockwise:clockWise];
+//    layer.path = [path CGPath];
+//    [self.view.layer addSublayer:layer];
+//
+//    //生成渐变色
+//    _gradientLayer = [CALayer layer];
+//
+//    //左侧渐变色
+//    CAGradientLayer *leftLayer = [CAGradientLayer layer];
+//    leftLayer.frame = CGRectMake(self.view.center.x-SCREEN_WIDTH/4, self.view.center.y-SCREEN_WIDTH/4, SCREEN_WIDTH / 2, SCREEN_WIDTH);    // 分段设置渐变色
+//    leftLayer.locations = @[@0.3, @0.9, @1];
+//    leftLayer.colors = @[(id)[UIColor yellowColor].CGColor, (id)[UIColor greenColor].CGColor];
+//    [_gradientLayer addSublayer:leftLayer];
+//
+//    //右侧渐变色
+//    CAGradientLayer *rightLayer = [CAGradientLayer layer];
+//    rightLayer.frame = CGRectMake(self.view.center.x+SCREEN_WIDTH/4, self.view.center.y-SCREEN_WIDTH/4, SCREEN_WIDTH/2, SCREEN_WIDTH);
+//    rightLayer.locations = @[@0.3, @0.9, @1];
+//    rightLayer.colors = @[(id)[UIColor yellowColor].CGColor, (id)[UIColor redColor].CGColor];
+//    [_gradientLayer addSublayer:rightLayer];
+//
+//    [self.view.layer setMask:layer]; //用progressLayer来截取渐变层
+//    [self.view.layer addSublayer:_gradientLayer];
+//}
+
+- (void)drawCycleWithStart:(CGFloat )startAngle and:(NSInteger)i andGap:(CGFloat)gap{
     CAShapeLayer *layer = [CAShapeLayer new];
-    layer.lineWidth = 60;
-    
+    layer.lineWidth = SCREEN_WIDTH/3/2;
     //圆环的颜色
     if (i%2 == 0) {
         layer.strokeColor = [UIColor redColor].CGColor;
@@ -78,34 +258,19 @@
     //背景填充色
     layer.fillColor = [UIColor clearColor].CGColor;
     //设置半径为10
-    CGFloat radius = 50;
+    CGFloat radius = SCREEN_WIDTH/2.5;
     //按照顺时针方向
     BOOL clockWise = true;
     //初始化一个路径
     
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(200/2.0f, 200/2.0f) radius:radius startAngle:(startAngle+0.003)*M_PI endAngle:(startAngle+0.247)*M_PI clockwise:clockWise];
-    //设置线宽
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:self.view.center radius:radius startAngle:(startAngle+gap)*M_PI endAngle:(startAngle+0.25-gap)*M_PI clockwise:clockWise];
 
     layer.path = [path CGPath];
-    [centerView.layer addSublayer:layer];
-    
-  
+    [layerArray addObject:layer];
+    [self.view.layer addSublayer:layer];
 
 }
 
-- (void)goAnimatiom{
-    NSLog(@"goAnimatiom");
-        
-        CGFloat width = centerView.bounds.size.width;
-        if (width == wwidth) {
-            width=wwidth*1.5;
-        }else{
-            width = wwidth;
-        }
-        centerView.bounds=CGRectMake(centerView.bounds.origin.x, centerView.bounds.origin.y, width, width);
-
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -113,13 +278,59 @@
 }
 
 - (void)rightClickAction{
-    codeScannerVC *scanner = [[codeScannerVC alloc] init];
-    [self presentViewController:scanner animated:YES completion:nil];
-    scanner.resultBlock = ^(NSString *value) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:value message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
-    };
+//    codeScannerVC *scanner = [[codeScannerVC alloc] init];
+//    [self presentViewController:scanner animated:YES completion:nil];
+//    scanner.resultBlock = ^(NSString *value) {
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:value message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [alertView show];
+//    };
+    [self beginScan];
 }
+
+- (void)beginScan{
+    [SVProgressHUD setBackgroundColor:[UIColor lightGrayColor]];
+    [SVProgressHUD showWithStatus:@"模拟扫描中"];
+    [SVProgressHUD dismissWithDelay:1.0f completion:^{
+        testView.hidden = NO;
+        [self beginShark];
+    }];
+    
+}
+
+- (void)beginShark{
+
+
+    for (UIImageView *imageView in imageIconArray) {
+        srand([[NSDate date] timeIntervalSince1970]);
+        float rand=(float)random();
+        CFTimeInterval t=rand*0.0000000001;
+        
+        [UIView animateWithDuration:0.1 delay:t options:0  animations:^
+         {
+             imageView.transform = CGAffineTransformMakeScale(0.9, 0.9);
+             imageView.transform=CGAffineTransformMakeRotation(-0.1);
+         } completion:^(BOOL finished)
+         {
+             [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction  animations:^
+              {
+                  imageView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+                  imageView.transform=CGAffineTransformMakeRotation(0.1);
+              } completion:^(BOOL finished) {}];
+         }];
+    }
+}
+-(void)endShark
+{
+    for (UIImageView *imageView in imageIconArray) {
+        [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionBeginFromCurrentState animations:^
+         {
+             imageView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+             imageView.transform=CGAffineTransformIdentity;
+         } completion:^(BOOL finished) {}];
+    }
+}
+
+
 
 /*
 #pragma mark - Navigation

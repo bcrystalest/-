@@ -31,3 +31,6 @@
 #import "navigationButton.h"
 #import "codeScannerVC.h"
 #import "UIView+Frame.h"
+#import "AFNetWorking.h"
+#import "NetWorkRequest.h"
+#import "SVProgressHUD.h"

@@ -19,6 +19,7 @@ PODS:
     - SDWebImage/Core (= 4.2.0)
   - SDWebImage/Core (4.2.0)
   - Stripe (11.5.0)
+  - SVProgressHUD (2.2.2)
   - UMengUShare/Core (6.4.8):
     - UMengUShare/Network
   - UMengUShare/Network (6.4.8)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - Masonry
   - SDWebImage
   - Stripe
+  - SVProgressHUD
   - UMengUShare/Social/ReducedSina
   - UMengUShare/Social/WeChat
   - UMengUShare/UI
@@ -46,8 +48,9 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: b1189fd85365c18434270a11a5cad13a1e848d53
   Stripe: 10761682d20dc491c52287393c800db056c9748d
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   UMengUShare: 7a0ab762ccd445ccfcf11bde8e7f81b29b9f5e1c
 
-PODFILE CHECKSUM: 345c13096d70839ebb06c70ded0c35cd52f5f6e8
+PODFILE CHECKSUM: a53a5387a50447c2bde4882a91b4a8607b3365cc
 
 COCOAPODS: 1.3.1

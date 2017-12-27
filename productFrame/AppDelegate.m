@@ -48,7 +48,7 @@
 
     // 1.创建窗口
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    NSUserDefaults *useDef = [NSUserDefaults standardUserDefaults];
+//    NSUserDefaults *useDef = [NSUserDefaults standardUserDefaults];
     //判断是否第一次进入
 //    if (![useDef objectForKey:@"First2"]) {
 //        //第一次进入显示新手引导
