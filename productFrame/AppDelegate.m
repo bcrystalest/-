@@ -13,6 +13,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "WXApi.h"
 #import "STPPaymentContext.h"
+#import <Stripe/Stripe.h>
 
 #define kAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
@@ -40,7 +41,7 @@
     
     //设置新浪的appKey和appSecret
     
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954" appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954" appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
    
     /***** 注册微信支付 *****/
@@ -155,7 +156,13 @@
             // 处理微信的支付结果
             [WXApi handleOpenURL:url delegate:self];
         }
-        
+        if ([Stripe handleStripeURLCallbackWithURL:url]) {
+            return YES;
+        } else {
+            // This was not a stripe url – do whatever url handling your app
+            // normally does, if any.
+            return NO;
+        }
         return YES;
     }
     return result;

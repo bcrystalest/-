@@ -52,6 +52,7 @@
 		8428DA461FF253DD00B22468 /* ProductionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8428DA451FF253DD00B22468 /* ProductionDetailViewController.m */; };
 		8428DA491FF33BF900B22468 /* payView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8428DA481FF33BF900B22468 /* payView.m */; };
 		842B96F61FF3783000C92923 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B96F51FF3783000C92923 /* NSString+MD5.m */; };
+		842B96F91FF3A1A800C92923 /* Alipay.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B96F81FF3A1A800C92923 /* Alipay.m */; };
 		84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4DDD41FDE59500026CED5 /* GuideViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +152,12 @@
 		8428DA481FF33BF900B22468 /* payView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = payView.m; sourceTree = "<group>"; };
 		842B96F41FF3783000C92923 /* NSString+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		842B96F51FF3783000C92923 /* NSString+MD5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		842B96F71FF3A1A800C92923 /* Alipay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alipay.h; sourceTree = "<group>"; };
+		842B96F81FF3A1A800C92923 /* Alipay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Alipay.m; sourceTree = "<group>"; };
+		842B97681FF3AC9800C92923 /* openssl_wrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = openssl_wrapper.m; sourceTree = "<group>"; };
+		842B97691FF3AC9800C92923 /* APRSASigner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APRSASigner.h; sourceTree = "<group>"; };
+		842B976A1FF3AC9800C92923 /* openssl_wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = openssl_wrapper.h; sourceTree = "<group>"; };
+		842B976B1FF3AC9800C92923 /* APRSASigner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APRSASigner.m; sourceTree = "<group>"; };
 		84C4DDD31FDE59500026CED5 /* GuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		84C4DDD41FDE59500026CED5 /* GuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		96086AECA14E4B963C1E7CD9 /* Pods-productFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-productFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-productFrame/Pods-productFrame.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,20 +169,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841B04231FF0CDCD009F52A2 /* CoreMotion.framework in Frameworks */,
+				841B04211FF0CDC3009F52A2 /* CFNetwork.framework in Frameworks */,
 				841B041F1FF0CDBC009F52A2 /* Foundation.framework in Frameworks */,
 				841B041D1FF0CDB1009F52A2 /* UIKit.framework in Frameworks */,
+				841B041B1FF0CDA9009F52A2 /* CoreGraphics.framework in Frameworks */,
+				841B04191FF0CD8E009F52A2 /* CoreText.framework in Frameworks */,
+				841B04171FF0CD84009F52A2 /* QuartzCore.framework in Frameworks */,
+				841B04151FF0CD7C009F52A2 /* CoreTelephony.framework in Frameworks */,
+				841B04131FF0CD73009F52A2 /* SystemConfiguration.framework in Frameworks */,
+				841B04111FF0CD6A009F52A2 /* libz.tbd in Frameworks */,
+				841B040F1FF0CD62009F52A2 /* libc++.tbd in Frameworks */,
 				841B04321FF0E22D009F52A2 /* libWeChatSDK.a in Frameworks */,
 				841B042D1FF0DEA7009F52A2 /* libsqlite3.0.tbd in Frameworks */,
-				841B04111FF0CD6A009F52A2 /* libz.tbd in Frameworks */,
-				841B04131FF0CD73009F52A2 /* SystemConfiguration.framework in Frameworks */,
-				841B04151FF0CD7C009F52A2 /* CoreTelephony.framework in Frameworks */,
 				841B042B1FF0DE58009F52A2 /* Security.framework in Frameworks */,
-				841B04211FF0CDC3009F52A2 /* CFNetwork.framework in Frameworks */,
-				841B04231FF0CDCD009F52A2 /* CoreMotion.framework in Frameworks */,
-				841B041B1FF0CDA9009F52A2 /* CoreGraphics.framework in Frameworks */,
-				841B04171FF0CD84009F52A2 /* QuartzCore.framework in Frameworks */,
-				841B04191FF0CD8E009F52A2 /* CoreText.framework in Frameworks */,
-				841B040F1FF0CD62009F52A2 /* libc++.tbd in Frameworks */,
 				52CF90D9136BE1863A82BD46 /* libPods-productFrame.a in Frameworks */,
 				841B040D1FF0CD45009F52A2 /* AlipaySDK.framework in Frameworks */,
 			);
@@ -402,6 +409,8 @@
 		841B04081FF0CD06009F52A2 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
+				842B96F71FF3A1A800C92923 /* Alipay.h */,
+				842B96F81FF3A1A800C92923 /* Alipay.m */,
 				841B04241FF0D39D009F52A2 /* WeChat */,
 				841B04091FF0CD3A009F52A2 /* Alipay */,
 			);
@@ -411,6 +420,7 @@
 		841B04091FF0CD3A009F52A2 /* Alipay */ = {
 			isa = PBXGroup;
 			children = (
+				842B97671FF3AC9800C92923 /* Utils */,
 				841B040A1FF0CD45009F52A2 /* AlipaySDK.bundle */,
 				841B040B1FF0CD45009F52A2 /* AlipaySDK.framework */,
 			);
@@ -507,6 +517,17 @@
 				8428DA481FF33BF900B22468 /* payView.m */,
 			);
 			path = FeaturesView;
+			sourceTree = "<group>";
+		};
+		842B97671FF3AC9800C92923 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				842B97681FF3AC9800C92923 /* openssl_wrapper.m */,
+				842B97691FF3AC9800C92923 /* APRSASigner.h */,
+				842B976A1FF3AC9800C92923 /* openssl_wrapper.h */,
+				842B976B1FF3AC9800C92923 /* APRSASigner.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		84C4DDCF1FDE58BB0026CED5 /* Guide */ = {
@@ -746,6 +767,7 @@
 				4F0C28C41FEA3A3400FC78A3 /* rootIncludeController.m in Sources */,
 				8428DA261FF1050600B22468 /* ActivityViewController.m in Sources */,
 				4F54EF4E1FB0460000291B70 /* main.m in Sources */,
+				842B96F91FF3A1A800C92923 /* Alipay.m in Sources */,
 				8428DA3F1FF2118600B22468 /* UserInfo.m in Sources */,
 				4F7716761FF09E9D007F098A /* codeScannerVC.m in Sources */,
 				4F54EF7C1FB04C5100291B70 /* newViewController.m in Sources */,
