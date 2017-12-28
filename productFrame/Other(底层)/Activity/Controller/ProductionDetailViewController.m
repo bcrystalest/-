@@ -12,6 +12,7 @@
 #import "WXApi.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "Alipay.h"
+#import "CardExampleViewController.h"
 
 
 @interface ProductionDetailViewController ()<WXApiDelegate>
@@ -86,6 +87,7 @@
         [self apliPay];
     }else if (type == FOPayTypeStripe){
         NSLog(@"stripe");
+        [self stripePay];
     }
 }
 
@@ -93,6 +95,13 @@
     NSLog(@"buy");
     [self.view addSubview:self.payView];
     [self.payView show];
+}
+
+#pragma mark - stripe
+
+- (void)stripePay{
+    CardExampleViewController *card = [[CardExampleViewController alloc]init];
+    [self.navigationController pushViewController:card animated:YES];
 }
 
 #pragma mark - alipay

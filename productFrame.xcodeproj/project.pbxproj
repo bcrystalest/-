@@ -53,6 +53,7 @@
 		8428DA491FF33BF900B22468 /* payView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8428DA481FF33BF900B22468 /* payView.m */; };
 		842B96F61FF3783000C92923 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B96F51FF3783000C92923 /* NSString+MD5.m */; };
 		842B96F91FF3A1A800C92923 /* Alipay.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B96F81FF3A1A800C92923 /* Alipay.m */; };
+		842B97721FF49F7200C92923 /* CardExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B97711FF49F7200C92923 /* CardExampleViewController.m */; };
 		84C4DDD51FDE59500026CED5 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4DDD41FDE59500026CED5 /* GuideViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +159,8 @@
 		842B97691FF3AC9800C92923 /* APRSASigner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APRSASigner.h; sourceTree = "<group>"; };
 		842B976A1FF3AC9800C92923 /* openssl_wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = openssl_wrapper.h; sourceTree = "<group>"; };
 		842B976B1FF3AC9800C92923 /* APRSASigner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APRSASigner.m; sourceTree = "<group>"; };
+		842B97701FF49F7200C92923 /* CardExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardExampleViewController.h; sourceTree = "<group>"; };
+		842B97711FF49F7200C92923 /* CardExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardExampleViewController.m; sourceTree = "<group>"; };
 		84C4DDD31FDE59500026CED5 /* GuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		84C4DDD41FDE59500026CED5 /* GuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		96086AECA14E4B963C1E7CD9 /* Pods-productFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-productFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-productFrame/Pods-productFrame.release.xcconfig"; sourceTree = "<group>"; };
@@ -455,6 +458,8 @@
 				8428DA251FF1050600B22468 /* ActivityViewController.m */,
 				8428DA441FF253DD00B22468 /* ProductionDetailViewController.h */,
 				8428DA451FF253DD00B22468 /* ProductionDetailViewController.m */,
+				842B97701FF49F7200C92923 /* CardExampleViewController.h */,
+				842B97711FF49F7200C92923 /* CardExampleViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -776,6 +781,7 @@
 				8428DA291FF1088400B22468 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				8428DA301FF10A7200B22468 /* ActivityCollectionViewCell.m in Sources */,
 				4F889CAA1FECCD1D000B4B2C /* navigationButton.m in Sources */,
+				842B97721FF49F7200C92923 /* CardExampleViewController.m in Sources */,
 				8428DA491FF33BF900B22468 /* payView.m in Sources */,
 				8428DA381FF1E40100B22468 /* LogInViewController.m in Sources */,
 				4F0C28CB1FEB4F0A00FC78A3 /* navigationView.m in Sources */,
