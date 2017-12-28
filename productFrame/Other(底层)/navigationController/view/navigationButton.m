@@ -24,6 +24,7 @@
     if (_titleLabel == nil) {
         _titleLabel = [UILabel new];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.textColor = [UIColor colorWithRed:0.882 green:0.122 blue:0.522 alpha:1.00];
     }
     return _titleLabel;
 }
@@ -133,10 +134,10 @@
          }];
      }else if (_selfType == onlyImg) {
          [_imageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-             make.right.equalTo(weakSelf.mas_right).offset(-3);
-             make.bottom.equalTo(weakSelf.mas_bottom).offset(-3);
-             make.left.equalTo(weakSelf.mas_left).offset(3);
-             make.top.equalTo(weakSelf.mas_top).offset(3);
+             make.right.equalTo(weakSelf.mas_right).offset(-8);
+             make.bottom.equalTo(weakSelf.mas_bottom).offset(-8);
+             make.left.equalTo(weakSelf.mas_left).offset(8);
+             make.top.equalTo(weakSelf.mas_top).offset(8);
              make.height.mas_equalTo(weakSelf.imageView.mas_width).multipliedBy(1.0);
          }];
      }else if (_selfType == onlyText) {

@@ -10,6 +10,9 @@
 
 @interface newViewController ()<UIAlertViewDelegate>
 @property (nonatomic, strong) CALayer *gradientLayer;
+@property (nonatomic, strong) UIView *touchGetView;
+@property (nonatomic, strong) UIButton *scanButton;
+@property (nonatomic, assign)BOOL isSelected;
 @end
 
 @implementation newViewController
@@ -23,42 +26,75 @@
     CAShapeLayer *judgeLayer;
     CGRect basicFrame;
     NSInteger willBeChangedModelID;
+    BOOL isStart;
 }
+- (UIButton *)scanButton{
+    if (_scanButton == nil) {
+        _scanButton = [UIButton new];
+        [_scanButton setImage:[UIImage imageNamed:@"scanButton"] forState:UIControlStateNormal];
+        [_scanButton setImage:[UIImage imageNamed:@"scanButton"] forState:UIControlStateSelected];
+        [_scanButton addTarget:self action:@selector(beginScan) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _scanButton;
+}
+
+- (UIView *)touchGetView{
+    if (_touchGetView == nil) {
+        _touchGetView = [UIView new];
+        CGFloat width = SCREEN_WIDTH - 83;
+        _touchGetView.frame = CGRectMake(0, 0, width, width);
+        _touchGetView.center = self.view.center;
+        _touchGetView.backgroundColor = [UIColor clearColor];
+    }
+    return _touchGetView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    layerArray = [NSMutableArray new];
+    [self configUI];
     // Do any additional setup after loading the view.
+    
+}
+
+- (void)configUI{
+    foreoWeakSelf;
+    layerArray = [NSMutableArray new];
     self.view.backgroundColor = [UIColor whiteColor];
     [self addNavigationBar];
-    [self setNavigationBarTitle:@"whenever" withPopButton:YES];//扫码
-    [self setRightButtonWithType:upImgDownText andTitle:@"扫码" andImage:[UIImage imageNamed:@"scan"] andTextFont:11];
+    [self setNavigationBarTitle:@"我的 U F O" color:[UIColor colorWithRed:0.882 green:0.122 blue:0.522 alpha:1.00] font:[UIFont systemFontOfSize:18] withPopButton:YES];
+    [self setRightButtonWithType:onlyImg andTitle:nil andImage:[UIImage imageNamed:@"menu"] andTextFont:11];
     
-//    centerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
-//    centerView.backgroundColor = [UIColor grayColor];
-//    centerView.center = self.view.center;
-//    [self.view addSubview:centerView];
+    //    centerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+    //    centerView.backgroundColor = [UIColor grayColor];
+    //    centerView.center = self.view.center;
+    //    [self.view addSubview:centerView];
     imageIconArray = [NSMutableArray new];
     for (NSInteger i = 0; i<8; i++) {
-        [self drawCycleWithStart:0.25*i and:i andGap:0];
+        [self drawCycleWithStart:0.25*i and:i andGap:0.001];
     }
-
-//    [self drawcycle];
-//    [UIView animateWithDuration:1.0 animations:^{
-//        [self goAnimatiom];
-//    } completion:^(BOOL finished) {
-//        [self goAnimatiom];
-//    }];
     
-//    mainImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_WIDTH)];
-//    mainImageView.center = self.view.center;
-//    [self.view addSubview:mainImageView];
-//    mainImageView.image = [UIImage imageNamed:@"1703326970"];
-//    mainImageView.contentMode = UIViewContentModeScaleAspectFit;
+    //    [self drawcycle];
+    //    [UIView animateWithDuration:1.0 animations:^{
+    //        [self goAnimatiom];
+    //    } completion:^(BOOL finished) {
+    //        [self goAnimatiom];
+    //    }];
     
-    CGFloat r = SCREEN_WIDTH/2-40;
+    //    mainImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_WIDTH)];
+    //    mainImageView.center = self.view.center;
+    //    [self.view addSubview:mainImageView];
+    //    mainImageView.image = [UIImage imageNamed:@"1703326970"];
+    //    mainImageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    [self.view addSubview:self.touchGetView];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(judge:)];
+    [self.touchGetView addGestureRecognizer:tap];
+    
+    CGFloat r = (SCREEN_WIDTH - 135)/2;
     CGPoint centerPoint = self.view.center;
     UIImageView *image = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 10, 10)];
-//    image.image = [UIImage imageNamed:@"xz"];
+    //    image.image = [UIImage imageNamed:@"xz"];
     image.backgroundColor = [UIColor blackColor];
     image.center = centerPoint;
     [self.view addSubview:image];
@@ -87,7 +123,7 @@
     NSArray *array = [[NSArray alloc]initWithObjects:[NSValue valueWithCGPoint:centerPoint1],[NSValue valueWithCGPoint:centerPoint2],[NSValue valueWithCGPoint:centerPoint4],[NSValue valueWithCGPoint:centerPoint3],[NSValue valueWithCGPoint:centerPoint5],[NSValue valueWithCGPoint:centerPoint6],[NSValue valueWithCGPoint:centerPoint8],[NSValue valueWithCGPoint:centerPoint7], nil];
     for (NSInteger i = 0; i < 8; i++) {
         UIImageView *image = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-        image.image = [UIImage imageNamed:[NSString stringWithFormat:@"number_%ld",(long)(i+1)]];
+        image.image = [UIImage imageNamed:[NSString stringWithFormat:@"number_H_%ld",(long)(i)]];
         NSValue *value = array[i];
         CGPoint point = [value CGPointValue];
         image.center = point;
@@ -95,37 +131,92 @@
         [imageIconArray addObject:image];
         
     }
-   
+    
     
     testView = [UIImageView new];
     testView.userInteractionEnabled = YES;
-    testView.frame = CGRectMake(self.view.center.x-40, SCREEN_HEIGHT-100, 80, 50);
+    testView.frame = CGRectMake(self.view.center.x-40, SCREEN_HEIGHT-180, 50, 50);
     testView.backgroundColor = [UIColor redColor];
     testView.contentMode = UIViewContentModeScaleAspectFit;
     testView.image = [UIImage imageNamed:@"number_0"];
     [self.view addSubview:testView];
     testView.hidden = YES;
     
-    basicFrame = CGRectMake(self.view.center.x-40, SCREEN_HEIGHT-100, 80, 50);
+    basicFrame = CGRectMake(self.view.center.x-40, SCREEN_HEIGHT-180, 50, 50);
     
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(judge2:)];
     [testView addGestureRecognizer:pan];
     
- 
-
+    
+    //    UIPanGestureRecognizer *pan2 = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(actionStart:)];
+    //    [testView addGestureRecognizer:pan2];
+    //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(actionStart)];
+    //    [testView addGestureRecognizer:tap];
+    
+    [self.view addSubview:self.scanButton];
+    [_scanButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.touchGetView.mas_bottom).offset(10);
+        make.centerX.equalTo(weakSelf.view.mas_centerX);
+        make.width.height.mas_equalTo(40);
+    }];
+    
 }
-- (void)judge:(UIPanGestureRecognizer *)recognizer{
-    CGPoint translation = [recognizer translationInView:self.view];
-    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,recognizer.view.center.y + translation.y);
-    [recognizer setTranslation:CGPointZero inView:self.view];
-    if (CGRectIntersectsRect(mainImageView.frame, testView.frame)) {
-        NSLog(@"true");
+- (void)judge:(UITapGestureRecognizer *)recognizer{
+    CGPoint translation = [recognizer locationInView:self.touchGetView];
+    CGFloat x = (SCREEN_WIDTH - 83)/2;
+    CGFloat y = (SCREEN_WIDTH - 83)/2;
+    
+    CGFloat trueX = fabs(x-translation.x);
+    CGFloat trueY = fabs(y-translation.y);
+    
+    if ((trueX*trueX +trueY*trueY) < ((SCREEN_WIDTH - 15)/2)*((SCREEN_WIDTH - 15)/2)) {
+        NSLog(@"true,接触");
+        if (x-translation.x>0 && y-translation.y > 0) {
+            if (trueX>trueY) {
+                NSLog(@"7区");
+                [self showNormalAlert:6];
+            }else{
+                NSLog(@"8区");
+                [self showNormalAlert:7];
+            }
+            
+        }else if (x-translation.x>0 && y-translation.y < 0){
+            if (trueX>trueY) {
+                NSLog(@"6区");
+                [self showNormalAlert:5];
+            }else{
+                NSLog(@"5区");
+                [self showNormalAlert:4];
+            }
+        }else if (x-translation.x<0 && y-translation.y > 0){
+            if (trueX>trueY) {
+                NSLog(@"2区");
+                [self showNormalAlert:1];
+            }else{
+                NSLog(@"1区");
+                [self showNormalAlert:0];
+            }
+        }else{
+            if (trueX>trueY) {
+                NSLog(@"3区");
+                [self showNormalAlert:2];
+            }else{
+                NSLog(@"4区");
+                [self showNormalAlert:3];
+            }
+        }
     }else{
-        NSLog(@"false");
+        NSLog(@"false,未接触");
     }
 }
 
 - (void)judge2:(UIPanGestureRecognizer *)recognizer{
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        if (isStart == NO) {
+            [self beginShark];
+            isStart = YES;
+        }
+    }
     
     CGPoint translation = [recognizer translationInView:self.view];
     recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,recognizer.view.center.y + translation.y);
@@ -142,19 +233,39 @@
         if (x-recognizer.view.center.x>0 && y-recognizer.view.center.y > 0) {
             if (trueX>trueY) {
                 NSLog(@"7区");
+                if (recognizer.state != UIGestureRecognizerStateEnded) {
+                    return;
+                }
+                [self showAlert:6];
             }else{
                 NSLog(@"8区");
+                if (recognizer.state != UIGestureRecognizerStateEnded) {
+                    return;
+                }
+                [self showAlert:7];
             }
             
         }else if (x-recognizer.view.center.x>0 && y-recognizer.view.center.y < 0){
             if (trueX>trueY) {
                 NSLog(@"6区");
+                if (recognizer.state != UIGestureRecognizerStateEnded) {
+                    return;
+                }
+                [self showAlert:5];
             }else{
                 NSLog(@"5区");
+                if (recognizer.state != UIGestureRecognizerStateEnded) {
+                    return;
+                }
+                [self showAlert:4];
             }
         }else if (x-recognizer.view.center.x<0 && y-recognizer.view.center.y > 0){
             if (trueX>trueY) {
                 NSLog(@"2区");
+                if (recognizer.state != UIGestureRecognizerStateEnded) {
+                    return;
+                }
+                [self showAlert:1];
             }else{
                 NSLog(@"1区");
                 if (recognizer.state != UIGestureRecognizerStateEnded) {
@@ -165,8 +276,16 @@
         }else{
             if (trueX>trueY) {
                 NSLog(@"3区");
+                if (recognizer.state != UIGestureRecognizerStateEnded) {
+                    return;
+                }
+                [self showAlert:2];
             }else{
                 NSLog(@"4区");
+                if (recognizer.state != UIGestureRecognizerStateEnded) {
+                    return;
+                }
+                [self showAlert:3];
             }
         }
     }else{
@@ -184,25 +303,49 @@
 - (void)showAlert:(NSInteger)i{
     testView.hidden = YES;
     willBeChangedModelID = i;
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"您即将要将%ld号模式进行更新",i] delegate:self cancelButtonTitle:@"好" otherButtonTitles:@"取消",nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"您即将要将%ld号模式进行更新",i+1] delegate:self cancelButtonTitle:@"好" otherButtonTitles:@"取消",nil];
+    alertView.tag = 1001;
     [alertView show];
+    
+}
+
+
+- (void)showNormalAlert:(NSInteger)i{
+
+    for (NSInteger j = 0; j<imageIconArray.count; j++) {
+        UIImageView *imageView = imageIconArray[j];
+        if (j==i) {
+            imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"number_%ld",j]];
+        }else{
+            imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"number_H_%ld",j]];
+        }
+    }
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"您已点选了第%ld块区域",i+1] delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
+//    alertView.tag = 1002;
+//    [alertView show];
+    
 }
 
 //根据被点击按钮的索引处理点击事件
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0) {
-        UIImageView *imageView = imageIconArray[willBeChangedModelID];
-        imageView.image = testView.image;
-
-        [self endShark];
-    }else{
-        testView.hidden = NO;
-        [UIView animateWithDuration:0.3 animations:^{
-            testView.frame = basicFrame;
-        }];
+    if (alertView.tag == 1001) {
+        if (buttonIndex == 0) {
+            UIImageView *imageView = imageIconArray[willBeChangedModelID];
+            imageView.image = testView.image;
+            
+            [self endShark];
+        }else{
+            testView.hidden = NO;
+            [UIView animateWithDuration:0.3 animations:^{
+                testView.frame = basicFrame;
+            }];
+        }
+        NSLog(@"clickButtonAtIndex:%ld",(long)buttonIndex);
+    }else if (alertView.tag == 1002){
+        
     }
-    NSLog(@"clickButtonAtIndex:%ld",(long)buttonIndex);
+    
 }
 
 
@@ -247,18 +390,18 @@
 
 - (void)drawCycleWithStart:(CGFloat )startAngle and:(NSInteger)i andGap:(CGFloat)gap{
     CAShapeLayer *layer = [CAShapeLayer new];
-    layer.lineWidth = SCREEN_WIDTH/3/2;
+    layer.lineWidth = SCREEN_WIDTH/3/2.5;
     //圆环的颜色
-    if (i%2 == 0) {
-        layer.strokeColor = [UIColor redColor].CGColor;
-    }else{
-        layer.strokeColor = [UIColor brownColor].CGColor;
-    }
-
+//    if (i%2 == 0) {
+//        layer.strokeColor = [UIColor redColor].CGColor;
+//    }else{
+//        layer.strokeColor = [UIColor brownColor].CGColor;
+//    }
+    layer.strokeColor = [UIColor colorWithRed:0.969 green:0.765 blue:0.898 alpha:1.00].CGColor;
     //背景填充色
     layer.fillColor = [UIColor clearColor].CGColor;
     //设置半径为10
-    CGFloat radius = SCREEN_WIDTH/2.5;
+    CGFloat radius = SCREEN_WIDTH/3;
     //按照顺时针方向
     BOOL clockWise = true;
     //初始化一个路径
@@ -292,28 +435,39 @@
     [SVProgressHUD showWithStatus:@"模拟扫描中"];
     [SVProgressHUD dismissWithDelay:1.0f completion:^{
         testView.hidden = NO;
-        [self beginShark];
     }];
-    
 }
 
 - (void)beginShark{
-
-
+//    for (UIImageView *imageView in imageIconArray) {
+//        srand([[NSDate date] timeIntervalSince1970]);
+//        float rand=(float)random();
+//        CFTimeInterval t=rand*0.0000000001;
+//        [UIView animateWithDuration:0.2 delay:t options:0  animations:^{
+//            imageView.transform = CGAffineTransformMakeScale(0.9, 0.9);
+//        } completion:^(BOOL finished) {
+//            [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction  animations:^
+//             {
+//                 imageView.transform = CGAffineTransformMakeScale(1.1, 1.1);
+//             } completion:^(BOOL finished) {}];
+//        }];
+//
+//    }
+    
+    
+    
     for (UIImageView *imageView in imageIconArray) {
         srand([[NSDate date] timeIntervalSince1970]);
         float rand=(float)random();
         CFTimeInterval t=rand*0.0000000001;
-        
+
         [UIView animateWithDuration:0.1 delay:t options:0  animations:^
          {
-             imageView.transform = CGAffineTransformMakeScale(0.9, 0.9);
              imageView.transform=CGAffineTransformMakeRotation(-0.1);
          } completion:^(BOOL finished)
          {
              [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction  animations:^
               {
-                  imageView.transform = CGAffineTransformMakeScale(1.0, 1.0);
                   imageView.transform=CGAffineTransformMakeRotation(0.1);
               } completion:^(BOOL finished) {}];
          }];

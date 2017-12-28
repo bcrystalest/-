@@ -47,8 +47,9 @@
     };
 }
 ///设置title和返回按钮
-- (void)setNavigationBarTitle:(NSString *)title withPopButton:(BOOL)show{
-    [self.navBar addNavigationBarTitle:title];
+- (void)setNavigationBarTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font withPopButton:(BOOL)show{
+    
+    [self.navBar setNavigationBarTitle:title color:color font:font];
     if (show == YES) {
         [self.navBar addBackButton];
     }

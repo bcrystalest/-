@@ -18,8 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor brownColor];
+    [self setNavigationBarTitle:@"whatever" color:[UIColor blackColor] font:[UIFont systemFontOfSize:15] withPopButton:NO];
     
-    [self setNavigationBarTitle:@"whatever" withPopButton:NO];
     UIButton *btn = [UIButton new];
     [self.view addSubview:btn];
     btn.frame = CGRectMake(100, 100, 50, 50);
