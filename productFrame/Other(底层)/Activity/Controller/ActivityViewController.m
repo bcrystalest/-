@@ -26,8 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setNavigationBarTitle:@"activity" withPopButton:NO];
-        
+    [self setNavigationBarTitle:@"activity" color:[UIColor blackColor] font:[UIFont systemFontOfSize:14] withPopButton:NO];
     CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init];
     layout.columnCount = 2;
     layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);

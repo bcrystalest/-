@@ -29,8 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    self.view.backgroundColor = [UIColor whiteColor];
-    
-    [self setNavigationBarTitle:@"production" withPopButton:YES];
+    [self setNavigationBarTitle:@"production" color:[UIColor blackColor] font:[UIFont systemFontOfSize:14] withPopButton:YES];
 
     UIImageView *productionImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 68, SCREEN_WIDTH, 300)];
     productionImage.image = [UIImage imageNamed:@"foreo1.png"];

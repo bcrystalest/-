@@ -80,9 +80,10 @@
     }];
 }
 
-- (void)addNavigationBarTitle:(NSString *)titleString{
-    _titleLabel.text = titleString;
-    
+- (void)setNavigationBarTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font{
+    _titleLabel.text = title;
+    _titleLabel.textColor = color;
+    _titleLabel.font = font;
 }
 
 - (void)addBackButton{
@@ -95,7 +96,7 @@
         make.height.mas_equalTo(40);
 
     }];
-
+    
     _backButton.clickBlock = ^{
         [weakSelf goBackAction];
     };

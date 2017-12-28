@@ -19,7 +19,7 @@ typedef enum :NSInteger {
 @interface navigationView : UIView
 @property (nonatomic, copy) buttonClickBlock gobackBlock;
 @property (nonatomic, copy) buttonClickBlock rightClickBlock;
-- (void)addNavigationBarTitle:(NSString *)titleString;
+- (void)setNavigationBarTitle:(NSString *)title color:(UIColor *)color font:(UIFont *)font;
 - (void)addBackButton;
 - (void)addRightButtonWithType:(navButtonType)btnType andTitle:(NSString *)title andImage:(UIImage *)image andTextFont:(CGFloat)font;
 
