@@ -148,6 +148,10 @@
 		<string>vk</string>
 		<string>vk-share</string>
 		<string>vkauthorize</string>
+		<array>
+			<string>wechat</string>
+			<string>weixin </string>
+		</array>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
