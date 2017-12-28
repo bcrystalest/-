@@ -33,9 +33,9 @@
     // Do any additional setup after loading the view.
     
     self.title = @"Card";
-    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
+//    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+//        self.edgesForExtendedLayout = UIRectEdgeNone;
+//    }
     
     [self setNavigationBarTitle:@"cardPay" color:[UIColor blackColor] font:[UIFont systemFontOfSize:14] withPopButton:YES];
 

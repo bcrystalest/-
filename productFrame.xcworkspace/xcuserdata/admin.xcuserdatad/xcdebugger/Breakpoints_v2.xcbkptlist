@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/AppDelegate.m"
-            timestampString = "536131413.303797"
+            timestampString = "536131883.652088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/ActivityViewController.m"
-            timestampString = "536036761.467796"
+            timestampString = "536142513.581717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/ActivityViewController.m"
-            timestampString = "536036761.467852"
+            timestampString = "536142513.581792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "134"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/ActivityViewController.m"
-            timestampString = "536036761.467902"
+            timestampString = "536142513.581849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/ActivityViewController.m"
-            timestampString = "536036761.467952"
+            timestampString = "536142513.5819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/ActivityViewController.m"
-            timestampString = "536036761.468"
+            timestampString = "536142513.58195"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/ActivityViewController.m"
-            timestampString = "536036761.468049"
+            timestampString = "536142513.581998"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/ActivityViewController.m"
-            timestampString = "536036761.468098"
+            timestampString = "536142513.582045"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "144"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/ActivityViewController.m"
-            timestampString = "536036761.468144"
+            timestampString = "536142513.582091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/ActivityViewController.m"
-            timestampString = "536036761.468193"
+            timestampString = "536142513.58214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/ProductionDetailViewController.m"
-            timestampString = "536131413.304344"
+            timestampString = "536142513.58219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "-shareOnPlatform:"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/ProductionDetailViewController.m"
-            timestampString = "536131413.304558"
+            timestampString = "536142513.582241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "-apliPay"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/AppDelegate.m"
-            timestampString = "536131413.304679"
+            timestampString = "536131883.652952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"
@@ -282,60 +282,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "productFrame/AppDelegate.m"
-            timestampString = "536131413.304771"
+            timestampString = "536131883.653011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
             endingLineNumber = "157"
             landmarkName = "-application:openURL:options:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/CardExampleViewController.m"
-            timestampString = "536131633.380323"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-pay"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/CardExampleViewController.m"
-            timestampString = "536131634.74554"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-pay"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "productFrame/Other(&#x5e95;&#x5c42;)/Activity/Controller/CardExampleViewController.m"
-            timestampString = "536131636.000301"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-pay"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

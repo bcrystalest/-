@@ -11,6 +11,7 @@
 #import "NSString+MD5.h"
 #import "WXApi.h"
 #import <AlipaySDK/AlipaySDK.h>
+#import "APRSASigner.h"
 #import "Alipay.h"
 #import "CardExampleViewController.h"
 
@@ -29,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.view.backgroundColor = [UIColor whiteColor];
     [self setNavigationBarTitle:@"production" color:[UIColor blackColor] font:[UIFont systemFontOfSize:14] withPopButton:YES];
 
     UIImageView *productionImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 68, SCREEN_WIDTH, 300)];
@@ -42,7 +42,6 @@
     [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
     [self.view addSubview:buyButton];
     [buyButton addTarget:self action:@selector(buy:) forControlEvents:UIControlEventTouchUpInside];
-//    [buyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [buyButton setBackgroundColor:[UIColor orangeColor]];
     
     if([WXApi isWXAppInstalled]){
@@ -169,28 +168,28 @@
 
     // NOTE: 获取私钥并将商户信息签名，外部商户的加签过程请务必放在服务端，防止公私钥数据泄露；
     //       需要遵循RSA签名规范，并将签名字符串base64编码和UrlEncode
-//    NSString *signedString = nil;
-//    APRSASigner* signer = [[APRSASigner alloc] initWithPrivateKey:((rsa2PrivateKey.length > 1)?rsa2PrivateKey:rsaPrivateKey)];
-//    if ((rsa2PrivateKey.length > 1)) {
-//        signedString = [signer signString:orderInfo withRSA2:YES];
-//    } else {
-//        signedString = [signer signString:orderInfo withRSA2:NO];
-//    }
+    NSString *signedString = nil;
+    APRSASigner* signer = [[APRSASigner alloc] initWithPrivateKey:((rsa2PrivateKey.length > 1)?rsa2PrivateKey:rsaPrivateKey)];
+    if ((rsa2PrivateKey.length > 1)) {
+        signedString = [signer signString:orderInfo withRSA2:YES];
+    } else {
+        signedString = [signer signString:orderInfo withRSA2:NO];
+    }
 
-    // NOTE: 如果加签成功，则继续执行支付
-//    if (signedString != nil) {
-//        //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
-//        NSString *appScheme = @"alisdkdemo";
-//
-//        // NOTE: 将签名成功字符串格式化为订单字符串,请严格按照该格式
-//        NSString *orderString = [NSString stringWithFormat:@"%@&sign=%@",
-//                                 orderInfo, signedString];
+//     NOTE: 如果加签成功，则继续执行支付
+    if (signedString != nil) {
+        //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
+        NSString *appScheme = @"alisdkdemo";
 
-        // NOTE: 调用支付结果开始支付
-//        [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-//            NSLog(@"reslut = %@",resultDic);
-//        }];
-//    }
+        // NOTE: 将签名成功字符串格式化为订单字符串,请严格按照该格式
+        NSString *orderString = [NSString stringWithFormat:@"%@&sign=%@",
+                                 orderInfo, signedString];
+
+//         NOTE: 调用支付结果开始支付
+        [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+            NSLog(@"reslut = %@",resultDic);
+        }];
+    }
 
 
 }
